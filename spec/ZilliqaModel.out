@@ -18411,3 +18411,10 @@ The coverage statistics at 2021-05-20 12:53:38
 End of statistics (please note that for performance reasons large models
 are best checked with coverage and cost statistics disabled).
 @!@!@ENDMSG 2777 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(8) at 2021-05-20 12:54:38: 239,733,991 states generated (4,591,202 s/min), 3,810,812 distinct states found (65,112 ds/min), 3,226,886 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2127:1 @!@!@
+when writing the disk (StatePoolWriter.run):
+states/21-05-20-12-04-33/469 (No such file or directory)
+@!@!@ENDMSG 2127 @!@!@
