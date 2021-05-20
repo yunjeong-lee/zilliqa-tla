@@ -53,27 +53,16 @@ VARIABLE faultyTxs          (* set of faulty txs being recorded, very specific t
 
 zilvars == <<epoch, nodesZilliqa, shardStructure, microBlocks, historyOfBlocks, timeCounter, numTxsRcvd, txsProcessed, faultyTxs>>
 
-(******************* parameters of BFT Consensus **************************)
+(********************** parameters of TCommit *****************************)
 
-CONSTANT  n1, n2, n3
+VARIABLE cnsState
 
-VARIABLES 
-    backupState,
-    leaderState,
-    leaderPrepared,
-    msgs
+cnsvars == <<cnsState>>
 
-BU == {n1, n2, n3}
-    \* suppose only the nodes from DS shard act as backups in this implementation
+cnsNodes == {"n1", "n2", "n3"}
+    \* suppose only the nodes from DS shard are participating
 
-\* below can be used to gen a set of member nodes from shard id (where input ret = {})
-MembersOfShard(id, ret) == 
-    LET shardSeq == shardStructure[id]
-    IN \A i \in 1..Len(shardSeq) : {shardSeq[i][1]} \cup ret
-
-BFT == INSTANCE BFTConsensus WITH Backup <- BU
-
-bftvars == <<backupState, leaderState, leaderPrepared, msgs>>
+TC == INSTANCE TCommit WITH RM <- cnsNodes, rmState <- cnsState
 
 -----------------------------------------------------------------------------
 
@@ -88,7 +77,7 @@ TypeOK ==
        (Len(shardStructure[id]) \geq shardSizeMin) /\ (Len(shardStructure[id]) \leq shardSizeMax)
 
 Init ==
-    /\ BFT!BFTInit
+    /\ TC!TCInit
     /\ epoch            = 0
     /\ nodesZilliqa     = initialNodes
     /\ shardStructure   = initShardStructure
@@ -151,7 +140,7 @@ NewNodeJoins(newNode) ==
     IF IsElementInSet(nodesZilliqa, newNode)
     THEN
         /\ UNCHANGED zilvars 
-        /\ UNCHANGED bftvars
+        /\ UNCHANGED cnsvars
     ELSE
         /\ timeCounter' = timeCounter + 1
         /\ nodesZilliqa' = nodesZilliqa \cup {newNode}
@@ -162,87 +151,7 @@ NewNodeJoins(newNode) ==
             shardStructure' = 
               [shardStructure EXCEPT ! [shardNum] = Append(shardStructure[shardNum], newNode)]
             /\ UNCHANGED <<epoch, microBlocks, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
-            /\ UNCHANGED bftvars
-
------------------------------------------------------------------------------
-
-\* remove elem from seq, or seq intact iff elem \notin Range(seq)
-RECURSIVE SeqRemove(_,_,_,_)
-SeqRemove(seq, elem, i, res) ==
-    IF i = Len(seq) + 1
-    THEN res
-    ELSE IF seq[i] # elem
-         THEN SeqRemove(seq, elem, i + 1, res \o <<seq[i]>>)
-         ELSE SeqRemove(seq, elem, i + 1, res)
-(* 
-SeqRemove(seq, elem) ==
-    LET F[i \in 0..Len(seq)] ==
-     IF i = 0 THEN << >>
-              ELSE IF seq[i] # elem THEN Append(F[i-1], seq[i])
-                                    ELSE F[i-1]
-    IN F[Len(seq)]
- *)
-Index(seq, nd) ==
-    CHOOSE index \in 1..Len(seq) : seq[index] = nd
-
-RECURSIVE Remove(_,_,_,_,_)
-Remove(s, n, i, max, res) ==
-    CASE s # << >> ->
-        IF i = max THEN res
-        ELSE 
-            CASE s[i] # n -> 
-                LET resnew == res \o <<s[i]>>
-                IN Remove(s, n, i+1, max, resnew)
-            []OTHER -> Remove(s, n, i+1, max, res)
-    []OTHER -> s
-
-\* remove a node from shard's sequence
-RemoveFromShard(oldNode, sID) ==
-    IF  Len(shardStructure[sID]) - 1 < shardSizeMin
-    THEN
-      UNCHANGED <<shardStructure, nodesZilliqa>> \* cannot remove
-    ELSE
-      LET
-        corrSeq == shardStructure[sID]
-        seqAfterRemoval == Remove(corrSeq, oldNode, 1, Len(corrSeq) + 1, << >>) \* SeqRemove(shardStructure[sID], oldNode, 1, <<>>)
-      IN
-        /\ nodesZilliqa' = nodesZilliqa \ {oldNode}
-        /\ shardStructure' = [shardStructure EXCEPT ! [sID] = seqAfterRemoval]
-    \*   [id \in shardID |-> seqAfterRemoval]
-            
-
-(* **************************** *)
-(*    Main #2 : node leaves     *)
-(* **************************** *)
-
-\* older version
-ExistNodeLeaves(node) ==
-    IF 
-        IsElementInSet(nodesZilliqa, node)
-    THEN
-        /\ timeCounter' = timeCounter + 1
-        /\  LET shID == FindShardIDofNode(node)
-            IN RemoveFromShard(node, shID)
-        /\ UNCHANGED <<epoch, microBlocks, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
-        /\ UNCHANGED bftvars
-    ELSE
-        /\ UNCHANGED zilvars
-        /\ UNCHANGED bftvars
-
-\* alternative version
-ZilNodeLeavesFromShard(sID) ==
-    IF  \/ Cardinality(nodesZilliqa) \leq (shardSizeMax - 2)
-        \/ Len(shardStructure[sID]) - 1 < shardSizeMin
-    THEN 
-        /\ UNCHANGED zilvars
-        /\ UNCHANGED bftvars
-    ELSE 
-        LET seq == shardStructure[sID]
-            nodeToRemove == Head(seq)
-        IN  /\ nodesZilliqa' = nodesZilliqa \ {nodeToRemove}
-            /\ shardStructure' = [shardStructure EXCEPT ! [sID] = Tail(seq)]
-            /\ UNCHANGED <<epoch, microBlocks, historyOfBlocks, timeCounter, numTxsRcvd, txsProcessed, faultyTxs>>
-            /\ UNCHANGED bftvars
+            /\ UNCHANGED cnsvars
 
 -----------------------------------------------------------------------------
 
@@ -250,7 +159,7 @@ ZilNodeLeavesFromShard(sID) ==
 AtTheRightEpochTerm == \A sId \in shardID : microBlocks[sId].epochTerm = epoch
 
 (* ----------------------------------------------- *)
-(* -- Run BFT consensus and verify transaction --- *)
+(* ---- Run consensus and verify transaction ----- *)
 (* ----------------------------------------------- *)
 
 \* each of all shards run pBFT, gen microBlock [epochTerm : Nat, Tx : tx]
@@ -261,7 +170,7 @@ ShardProcessTx(snum, tx) ==
             TxsAppended == microBlocks[snum].txsAgreed \o <<txAgrd>>
             existEpoch == microBlocks[snum].epochTerm
         IN
-            /\ BFT!BFTNext
+            /\ TC!TCNext
             /\ microBlocks' = [microBlocks EXCEPT ! [snum] =
                             [epochTerm |-> existEpoch, txsAgreed |-> TxsAppended]]
             /\ txsProcessed' = txsProcessed \cup {tx}
@@ -269,30 +178,10 @@ ShardProcessTx(snum, tx) ==
     []OTHER -> 
         /\ faultyTxs' = faultyTxs \cup {tx}
         /\ UNCHANGED <<microBlocks, txsProcessed>>
-        /\ UNCHANGED bftvars
-
-\* previous version
-PrevShardProcessTx(snum, tx) ==
-    CASE tx[2] = TRUE ->
-        LET
-          leaderNode == Head(shardStructure[snum]) \* whenever members change, its leader changes
-          backupNodes == Tail(shardStructure[snum])
-        IN LET
-            txAgrd == tx \* RunBFTConsensus(leaderNode, backupNodes, tx)
-            TxsAppended == microBlocks[snum].txsAgreed \o <<txAgrd>>
-            existEpoch == microBlocks[snum].epochTerm
-           IN
-            /\ microBlocks' = [microBlocks EXCEPT ! [snum] =
-                            [epochTerm |-> existEpoch, txsAgreed |-> TxsAppended]]
-            /\ txsProcessed' = txsProcessed \cup {tx}
-            /\ UNCHANGED <<faultyTxs>>
-    []OTHER -> 
-        /\ faultyTxs' = faultyTxs \cup {tx}
-        /\ UNCHANGED <<microBlocks, txsProcessed>>
-
+        /\ UNCHANGED cnsvars
 
 (* **************************** *)
-(*    Main #3 : new tx rcv'd    *)
+(*    Main #2 : new tx rcv'd    *)
 (* **************************** *)
 
 NewTxRcvd(tx, sender) ==
@@ -316,7 +205,7 @@ NewTxRcvd(tx, sender) ==
         /\ UNCHANGED <<epoch, nodesZilliqa, shardStructure, historyOfBlocks>>
     ELSE
         /\ UNCHANGED zilvars
-        /\ UNCHANGED bftvars
+        /\ UNCHANGED cnsvars
 
 (* note : txs submitted should come by sender who is participating in the protocol
  *        ie, no txs sent by non-participating node will be processed by the protocol
@@ -381,7 +270,7 @@ DSAgreesOnFinalBlock ==
       [epochTerm |-> epoch, txsCollated |-> transactionsCollated]
 
 (* **************************** *)
-(*  Main #4 : commit to history *)
+(*  Main #3 : commit to history *)
 (* **************************** *)
 
 CommitToHistoryPerMBs(numMB) ==
@@ -395,10 +284,10 @@ CommitToHistoryPerMBs(numMB) ==
         /\ \A id \in shardID : \* upon pushing to history, empty the microBlocks
                 microBlocks' = [microBlocks EXCEPT ! [id].txsAgreed = <<>>] 
         /\ UNCHANGED <<epoch, nodesZilliqa, shardStructure, faultyTxs>>
-        /\ UNCHANGED bftvars
+        /\ UNCHANGED cnsvars
     ELSE 
       /\ UNCHANGED zilvars
-      /\ UNCHANGED bftvars
+      /\ UNCHANGED cnsvars
 
 -----------------------------------------------------------------------------
 
@@ -408,7 +297,7 @@ EnoughTimePassed(cnt) ==
     /\ timeCounter % cnt = 0
 
 (* **************************** *)
-(*      Main #5 : time out      *)
+(*      Main #4 : time out      *)
 (* **************************** *)
 
 TimeOut ==
@@ -424,10 +313,10 @@ TimeOut ==
                                 [epochTerm |-> microBlocks[sID].epochTerm + 1,
                                  txsAgreed |-> microBlocks[sID].txsAgreed]]
          /\ UNCHANGED <<nodesZilliqa, shardStructure, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
-         /\ UNCHANGED bftvars
+         /\ UNCHANGED cnsvars
     ELSE 
       /\ UNCHANGED zilvars
-      /\ UNCHANGED bftvars
+      /\ UNCHANGED cnsvars
 
 -----------------------------------------------------------------------------
 
@@ -450,7 +339,7 @@ ChooseNonDSNonEmptyShardID(toExclude) ==
      *        also recursive function slows down the model checking process *)
 
 (* **************************** *)
-(*   Main #6 : update DS shard  *)
+(*   Main #5 : update DS shard  *)
 (* **************************** *)
 
 UpdateDSCommittee(othershID) ==
@@ -467,10 +356,10 @@ UpdateDSCommittee(othershID) ==
           /\ timeCounter' = timeCounter + 1
           /\ UNCHANGED <<epoch, nodesZilliqa, microBlocks, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
           \* sequence works in FIFO order so head refers to oldest, etc.
-          /\ UNCHANGED bftvars
+          /\ UNCHANGED cnsvars
     ELSE 
         /\ UNCHANGED zilvars \* tuple of all the global variables
-        /\ UNCHANGED bftvars
+        /\ UNCHANGED cnsvars
 
 -----------------------------------------------------------------------------
 
@@ -480,14 +369,12 @@ Next ==
   (*************************************************************************)
   (* POSSIBLE MOVES:                                                       *)
   (*  1. a new non-participating node joins the protocol                   *)
-  (*  2. an existing node leaves the protocol                              *)
-  (*  3. the protocol receives a new transaction                           *)
-  (*  4. given enough micro blocks, a ds block is committed to history     *)
-  (*  5. if enough time has passed, then time out and move to next epoch   *)
-  (*  6. upon receiving some number of txs, the DS committee is updated    *)
+  (*  2. the protocol receives a new transaction                           *)
+  (*  3. given enough micro blocks, a ds block is committed to history     *)
+  (*  4. if enough time has passed, then time out and move to next epoch   *)
+  (*  5. upon receiving some number of txs, the DS committee is updated    *)
   (*************************************************************************)
     \/ \E newNode \in Node : NewNodeJoins(newNode)
-    \* \/ \E existNode \in Node : ExistNodeLeaves(existNode) 
     \/ \E newTx \in nonFaulty, sndr \in Node : NewTxRcvd(newTx, sndr)
     \/ CommitToHistoryPerMBs(5)
     \/ TimeOut
@@ -495,14 +382,14 @@ Next ==
 
 -----------------------------------------------------------------------------
 
-myview == <<epoch, microBlocks, shardStructure, txsProcessed, numTxsRcvd, historyOfBlocks, timeCounter>>
+\* myview == <<epoch, microBlocks, shardStructure, txsProcessed, numTxsRcvd, historyOfBlocks, timeCounter>>
 
 \* notes :
 \* - initially excluded : microBlocks, timeCounter
 \* - below makes checking via TLC intractable
 \*   myview == <<microBlocks>>
 \* - checked below separately
-\*   myview == <<epoch, nodesZilliqa, shardStructure>>
+  myview == <<epoch, nodesZilliqa, shardStructure>>
 \*   myview == <<epoch, nodesZilliqa, shardStructure, txsProcessed>>
 
 -----------------------------------------------------------------------------
@@ -539,25 +426,17 @@ CorrectTxsCommitted ==
     (* note : above version makes more sense than below
      * \A tx \in txsProcessed : (tx[2] = TRUE) /\ (tx \notin faultyTxs) *)
 
-(* Limitations of the current model
- * - Because backup nodes participating in the pBFT consensus are fixed,
- *   we cannot verify a property that "nodes who are not participating
- *   should not play any role in consensus"
- * - Since it lacks specification of possible misbehavior of byzantine nodes,
- *   we cannot verify how presence of byzantine nodes can lead to committing faulty txs
- *)
-
 -----------------------------------------------------------------------------
 
 (* State-space constraints to make checking of this model via TLC tractable *)
 
 \* stop after some # of DS blocks is commited to the history
 DSCommitConstr ==
-    Cardinality(historyOfBlocks) < 3
+    Cardinality(historyOfBlocks) < 2
 
 \* stop after sufficient amount of time has passed
 TimeConstr ==
-    epoch < 3
+    epoch < 2
 
 \* invariant to see scenario when all available nodes join the protocol
 AllNodesJoinedZilliqa ==
@@ -567,6 +446,14 @@ AfterSomeTime ==
     epoch # 1 \* numTxsRcvd # 20
 
 -----------------------------------------------------------------------------
+
+(* Limitations of the current model
+ * - Because backup nodes participating in the pBFT consensus are fixed,
+ *   we cannot verify a property that "nodes who are not participating
+ *   should not play any role in consensus"
+ * - Since it lacks specification of possible misbehavior of byzantine nodes,
+ *   we cannot verify how presence of byzantine nodes can lead to committing faulty txs
+ *)
 
 \* additional comment (To remove later)
 \* DSBlock == [epochTerm : Nat, txsCollated : Tx]
