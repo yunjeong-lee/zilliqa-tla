@@ -138,7 +138,7 @@ NewNodeJoins(newNode) ==
   (*************************************************************************)
     IF IsElementInSet(nodesZilliqa, newNode)
     THEN
-        /\ UNCHANGED zilvars 
+        /\ UNCHANGED zilvars
         /\ UNCHANGED cnsvars
     ELSE
         /\ timeCounter' = timeCounter + 1
@@ -164,6 +164,9 @@ CollateMicroBlocksTxs(seq, sID) ==
             \* /\ \A i \in 1..Len(tempSeq) : txsProcessed' = txsProcessed \cup tempSeq[i]
     ELSE seq
 
+CollateAlternative ==
+    (microBlocks[0].txsAgreed \o microBlocks[1].txsAgreed) \o microBlocks[2].txsAgreed
+
 \* DS Committee runs BFT and gen dsBlock (to add to historyOfBlocks)
 DSAgreesOnFinalBlock ==
     LET transactionsCollated == CollateMicroBlocksTxs(<<>>, 0) \* seq of txs collected from microblocks
@@ -171,6 +174,7 @@ DSAgreesOnFinalBlock ==
 
 EmptyMicroBlock(shardid) ==
     microBlocks' = [microBlocks EXCEPT ![shardid].txsAgreed = <<>>]
+
 -----
 
 \* Check we're at the right epoch term before updating microBlocks and DSBlock
@@ -189,6 +193,10 @@ ShardProcessTx(snum, tx) ==
                             [epochTerm |-> existEpoch, txsAgreed |-> TxsAppended]]
         /\ txsProcessed' = txsProcessed \cup {tx}
 
+EnoughTxsRcvd(cnt) ==
+    /\ numTxsRcvd # 0
+    /\ numTxsRcvd % cnt = 0
+
 (* **************************** *)
 (*     Action : new tx rcv'd    *)
 (* **************************** *)
@@ -202,16 +210,19 @@ NewTxRcvd(tx, sender) ==
   (*         and when the tx has not been processed already                *)
   (*************************************************************************)
     /\ IF \* can DS nodes collate and commit final blcok to history
-            /\ numTxsRcvd  # 0
-            /\ numTxsRcvd % 5 = 0 \* per 5 txs received
+            EnoughTxsRcvd(5) \* per 5 txs received
        THEN
             /\ TC!TCNext \* DS nodes run consensus before committing final blcok
             /\ historyOfBlocks' = historyOfBlocks \cup 
-                    {[epochTerm |-> epoch, txsCollated |-> CollateMicroBlocksTxs(<<>>, 0)]}
+                    {[epochTerm |-> epoch, txsCollated |-> CollateAlternative]} \* [prev] CollateMicroBlocksTxs(<<>>, 0)
             /\ epoch' = epoch + 1
-            /\ \A id \in shardID : EmptyMicroBlock(id)
+            \* /\ \A id \in shardID : EmptyMicroBlock(id) \* changed to below just to be sure
+            /\ microBlocks' =
+                [microBlocks EXCEPT ! [0] = [epochTerm |-> microBlocks[0].epochTerm, txsAgreed |-> <<>>],
+                                    ! [1] = [epochTerm |-> microBlocks[1].epochTerm, txsAgreed |-> <<>>],
+                                    ! [2] = [epochTerm |-> microBlocks[2].epochTerm, txsAgreed |-> <<>>]]
        ELSE 
-            /\ UNCHANGED <<historyOfBlocks, epoch>>
+            /\ UNCHANGED <<historyOfBlocks, epoch, microBlocks>>
             /\ UNCHANGED cnsvars
     /\ IF \* is it coming from the participating node and has the tx not been processed yet
             /\ IsElementInSet(nodesZilliqa, sender)
@@ -229,7 +240,8 @@ NewTxRcvd(tx, sender) ==
                     /\ UNCHANGED <<microBlocks, txsProcessed>>
             /\ UNCHANGED <<nodesZilliqa, shardStructure>>
        ELSE
-            /\ UNCHANGED <<nodesZilliqa, shardStructure, timeCounter, numTxsRcvd, microBlocks, txsProcessed, faultyTxs>>
+            /\ timeCounter' = timeCounter + 1 \* to be removed to make passing of time meaningful (otherwise takes so long to commit to history)
+            /\ UNCHANGED <<nodesZilliqa, shardStructure, numTxsRcvd, txsProcessed, faultyTxs>>
 
 -----------------------------------------------------------------------------
 
@@ -248,17 +260,16 @@ TimeOut ==
   (*         set the global glock timeCounter to 0                         *)
   (*         keep microBlocks, to be committed to history in next epoch    *)
   (*************************************************************************)
-    IF EnoughTimePassed(10)
-    THEN /\ epoch' = epoch + 1
-         /\ \* synchronize epoch across the protocol by updating epochTerm for every shard ID
-           \A sID \in shardID : microBlocks' = [microBlocks EXCEPT ! [sID] =
-                                [epochTerm |-> microBlocks[sID].epochTerm + 1,
-                                 txsAgreed |-> microBlocks[sID].txsAgreed]]
-         /\ UNCHANGED <<nodesZilliqa, shardStructure, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
-         /\ UNCHANGED cnsvars
-    ELSE 
-      /\ UNCHANGED zilvars
-      /\ UNCHANGED cnsvars
+    /\ EnoughTimePassed(5) \* (timeCounter % 5 = 0) /\ (timeCounter # 0) \* enabling condition
+    /\ epoch' = epoch + 1
+    /\ \* synchronize epoch across the protocol by updating epochTerm for every shard ID
+       microBlocks' =
+        [microBlocks EXCEPT ! [0] = [epochTerm |-> microBlocks[0].epochTerm + 1, txsAgreed |-> microBlocks[0].txsAgreed],
+                            ! [1] = [epochTerm |-> microBlocks[1].epochTerm + 1, txsAgreed |-> microBlocks[1].txsAgreed],
+                            ! [2] = [epochTerm |-> microBlocks[2].epochTerm + 1, txsAgreed |-> microBlocks[2].txsAgreed]]
+    /\ timeCounter' = timeCounter + 1
+    /\ UNCHANGED <<nodesZilliqa, shardStructure, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
+    /\ UNCHANGED cnsvars
 
 -----------------------------------------------------------------------------
 
@@ -278,20 +289,8 @@ Next ==
 
 -----------------------------------------------------------------------------
 
-\* myview == <<epoch, microBlocks, shardStructure, txsProcessed, numTxsRcvd, historyOfBlocks, timeCounter>>
-
-\* notes :
-\* - initially excluded : microBlocks, timeCounter
-\* - below makes checking via TLC intractable
-\*   myview == <<microBlocks>>
-\* - checked below separately
-  myview == <<epoch, nodesZilliqa, shardStructure, numTxsRcvd, txsProcessed>>
-\*   myview == <<epoch, nodesZilliqa, shardStructure, txsProcessed>>
-
------------------------------------------------------------------------------
-
 (* **************************** *)
-(*    Correctness properties    *)
+(*       Safety properties      *)
 (* **************************** *)
 
 \* once in microBlocks, it will be committed to the historyOfBlocks
@@ -302,10 +301,11 @@ TransactionFinality ==
           LET txElem == microBlocks[id].txsAgreed[index]
           IN
             IsElementInSet(txsProcessed, txElem)
-
-            \* \E block \in historyOfBlocks :
-            \*     SeqContains(block.txsCollated, txElem) 
-               
+            (* comment : because it takes time to commit in the current implementation,
+             *           it's difficult to verify the following 
+             *              \E block \in historyOfBlocks :
+             *                  SeqContains(block.txsCollated, txElem) *)
+  
 
 \* once rcv tx, it should not be processed by two different shards
 \* that is once rcv tx, it will be processed by a single shard
@@ -323,22 +323,36 @@ CorrectTxsCommitted ==
 
 -----------------------------------------------------------------------------
 
+\* view to verify actions NewNodeJoins and TimeOut
+\* myview == <<epoch, shardStructure, microBlocks, historyOfBlocks, timeCounter, txsProcessed, faultyTxs>>
+        (* excluded variables as they are specific to this design : numTxsRcvd, nodesZilliqa *)
+
+\* view to verify action NewTxRcvd
+myview == <<epoch, numTxsRcvd, txsProcessed, faultyTxs, numTxsRcvd, timeCounter>>
+
+\* notes
+\* numTxsRcvd : needed to commit to history (and in the future, to update DS committee)
+
+-----------------------------------------------------------------------------
+
 (* State-space constraints to make checking of this model via TLC tractable *)
 
 \* stop after some # of DS blocks is commited to the history
-DSCommitConstr ==
-    Cardinality(historyOfBlocks) < 2
+DSCommitConstr == Cardinality(historyOfBlocks) < 2
 
 \* stop after sufficient amount of time has passed
-TimeConstr ==
-    epoch < 2
+TimeConstr == epoch < 5
+
+(* Invariants to make checking of this model via TLC tractable *)
+
+\* invariant to print out what is committed to the history
+DSCommitRecord == Cardinality(historyOfBlocks) # 1
+
+\* invariant to print out what happens after some time passes
+AfterSomeTime == epoch # 2
 
 \* invariant to see scenario when all available nodes join the protocol
-AllNodesJoinedZilliqa ==
-    Cardinality(nodesZilliqa) # Cardinality(Node)
-
-AfterSomeTime ==
-    epoch # 1 \* numTxsRcvd # 20
+AllNodesJoinedZilliqa == Cardinality(nodesZilliqa) # Cardinality(Node)
 
 -----------------------------------------------------------------------------
 
@@ -348,6 +362,8 @@ AfterSomeTime ==
  *   should not play any role in consensus"
  * - Since it lacks specification of possible misbehavior of byzantine nodes,
  *   we cannot verify how presence of byzantine nodes can lead to committing faulty txs
+ * - For some reason, TLC needs to explore so many paths to finally let microblocks to be committed to history
+ *   So this part can be re-worked (possibly further simplified) on to make it more tractable.
  *)
 
 \* additional comment (To remove later)
