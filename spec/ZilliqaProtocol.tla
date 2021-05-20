@@ -10,7 +10,7 @@ NodeID ==
      "n13", "n14", "n15", "n16", "n17", "n18", "n19", "n20"}
 
 TxID ==
-    {"tx1", "tx2", "tx3", "tx4", "tx5", "tx6", "tx7", "tx8"}
+    {"tx1", "tx2", "tx3", "tx4", "tx5", "tx6", "tx7", "tx8", "tx9", "tx10", "tx11", "tx12"}
 
 CONSTANTS
     Node,                  (* set of nodes (node pool) *)
@@ -55,12 +55,13 @@ zilvars == <<epoch, nodesZilliqa, shardStructure, microBlocks, historyOfBlocks, 
 
 (********************** parameters of TCommit *****************************)
 
-VARIABLE cnsState
-cnsvars == <<cnsState>>
-cnsNodes == {"n1", "n2", "n3"}
-    \* suppose only the nodes from DS shard are participating
+VARIABLE consenState
+consenNodes == {"n1", "n2", "n3"}
+    \* suppose only the DS nodes employ TCommit to agree on final block
 
-TC == INSTANCE TCommit WITH RM <- cnsNodes, rmState <- cnsState
+cnsvars == <<consenState>>
+
+TC == INSTANCE TCommit WITH RM <- consenNodes, rmState <- consenState
 
 -----------------------------------------------------------------------------
 
@@ -127,7 +128,7 @@ ProofOfWork(node) ==
         *         considered the possibility of newNode joining DS shard directly *)
 
 (* **************************** *)
-(*   Main #1 : new node joins   *)
+(*    Action : new node joins   *)
 (* **************************** *)
 
 NewNodeJoins(newNode) ==
@@ -153,105 +154,10 @@ NewNodeJoins(newNode) ==
 
 -----------------------------------------------------------------------------
 
-\* Check we're at the right epoch term before updating microBlocks and DSBlock
-AtTheRightEpochTerm == \A sId \in shardID : microBlocks[sId].epochTerm = epoch
-
-(* ----------------------------------------------- *)
-(* ---- Run consensus and verify transaction ----- *)
-(* ----------------------------------------------- *)
-
-\* each of all shards run pBFT, gen microBlock [epochTerm : Nat, Tx : tx]
-ShardProcessTx(snum, tx) ==
-    CASE tx[2] = TRUE -> \* simplified verification procedure
-        LET
-            txAgrd == tx
-            TxsAppended == microBlocks[snum].txsAgreed \o <<txAgrd>>
-            existEpoch == microBlocks[snum].epochTerm
-        IN
-            /\ TC!TCNext
-            /\ microBlocks' = [microBlocks EXCEPT ! [snum] =
-                            [epochTerm |-> existEpoch, txsAgreed |-> TxsAppended]]
-            /\ txsProcessed' = txsProcessed \cup {tx}
-            /\ UNCHANGED <<faultyTxs>>
-    []OTHER -> 
-        /\ faultyTxs' = faultyTxs \cup {tx}
-        /\ UNCHANGED <<microBlocks, txsProcessed>>
-        /\ UNCHANGED cnsvars
-
-(* **************************** *)
-(*    Main #2 : new tx rcv'd    *)
-(* **************************** *)
-
-NewTxRcvd(tx, sender) ==
-  (*************************************************************************)
-  (* ACTION: Zilliqa receives a new transaction from the 'sender' node     *)
-  (*         it processes the tx only when the sender is a Zilliqa node    *)
-  (*         if \E enough micro blocks, then collate and commit to history *)
-  (*************************************************************************)
-    IF 
-      /\ IsElementInSet(nodesZilliqa, sender)
-      /\ IsElementInSet(Tx \ txsProcessed, tx)
-    THEN
-        /\ numTxsRcvd' = numTxsRcvd + 1   \* increment numTxsRcvd by 1
-        /\ timeCounter' = timeCounter + 1 \* increment timeCounter by 1
-        /\ AtTheRightEpochTerm             \* enabling condition
-        /\ IsElementInSet(Tx \ txsProcessed, tx)       \* enabling condition
-        /\ 
-            \* update microBlock of a relevant shard
-            LET shardIDNum == FindShardIDofNode(sender)
-            IN ShardProcessTx(shardIDNum, tx)
-        /\ UNCHANGED <<epoch, nodesZilliqa, shardStructure, historyOfBlocks>>
-    ELSE
-        /\ UNCHANGED zilvars
-        /\ UNCHANGED cnsvars
-
-(* note : txs submitted should come by sender who is participating in the protocol
- *        ie, no txs sent by non-participating node will be processed by the protocol
- *        this condition is checked as an enabling condition above *)
-
------------------------------------------------------------------------------
-
-(* ----------------------------------------------- *)
-(* ---- Check if there are enough MicroBlocks ---- *)
-(* ----------------------------------------------- *)
-Pick(S) == CHOOSE s \in S : TRUE
-
-RECURSIVE SetReduce(_, _, _)
-SetReduce(Op(_,_), S, value) ==
-    IF S = {} THEN value
-    ELSE
-        LET s == Pick(S)
-        IN  IF Op(s, value) = Op(value, s)
-            THEN SetReduce(Op, S \ {s}, Op(s, value))
-            ELSE Assert(FALSE, "oh no, not communitative Op")
-
-Sum(S) == LET _op(a, b) == a + b IN SetReduce(_op, S, 0)
-
-Max(S) == CHOOSE x \in S: 
-            \A y \in S: y <= x
-
-RECURSIVE CombineLengths(_,_)
-CombineLengths(set, shID) ==
-    IF shID \leq Max(shardID)
-    THEN LET tempSet == set \cup {Len(microBlocks[shID].txsAgreed)}
-         IN CombineLengths(tempSet, (shID + 1))
-    ELSE set
-
-\* Condition to trigger DS to gen dsBlock
-EnoughMicroBlocks(n) ==
-    LET setLengths == CombineLengths({}, 1) \* provide empty set and 0 as inputs
-    IN Sum(setLengths) \geq n \* reduced to 3, otherwise too slow to run TLC
-
-(* ----------------------------------------------- *)
-(* --- Generate DS Block and commit to history --- *)
-(* ----------------------------------------------- *)
-DSRunBFTConsensus(leader, backups, txs) ==
-    txs
-
 \* traverse microBlocks and collect all the transactions into txsCollated
 RECURSIVE CollateMicroBlocksTxs(_,_)
 CollateMicroBlocksTxs(seq, sID) ==
-    IF sID \leq Max(shardID)
+    IF sID < Cardinality(shardID)
     THEN LET tempSeq == seq \o microBlocks[sID].txsAgreed
          IN 
             CollateMicroBlocksTxs(tempSeq, (sID + 1))
@@ -260,32 +166,70 @@ CollateMicroBlocksTxs(seq, sID) ==
 
 \* DS Committee runs BFT and gen dsBlock (to add to historyOfBlocks)
 DSAgreesOnFinalBlock ==
+    LET transactionsCollated == CollateMicroBlocksTxs(<<>>, 0) \* seq of txs collected from microblocks
+    IN [epochTerm |-> epoch, txsCollated |-> transactionsCollated] \* final block to commit
+
+EmptyMicroBlock(shardid) ==
+    microBlocks' = [microBlocks EXCEPT ![shardid].txsAgreed = <<>>]
+-----
+
+\* Check we're at the right epoch term before updating microBlocks and DSBlock
+AtTheRightEpochTerm == \A sId \in shardID : microBlocks[sId].epochTerm = epoch
+
+\* each shard runs some consensus protocol, gen microBlock [epochTerm : Nat, Tx : tx]
+ShardProcessTx(snum, tx) ==
     LET
-      leaderDS == Head(shardStructure[0])
-      backupsDS == Tail(shardStructure[0])
-      transactionsCollated == DSRunBFTConsensus(leaderDS, backupsDS, CollateMicroBlocksTxs(<<>>, 0))
-    IN 
-      [epochTerm |-> epoch, txsCollated |-> transactionsCollated]
+        txAgrd == tx
+        TxsAppended == microBlocks[snum].txsAgreed \o <<txAgrd>>
+        existEpoch == microBlocks[snum].epochTerm
+    IN
+        \* note since running TCommit is done by DS Committee in current version
+        \* as the nodes participating in TCommit are statically declared as DS members
+        /\ microBlocks' = [microBlocks EXCEPT ! [snum] =
+                            [epochTerm |-> existEpoch, txsAgreed |-> TxsAppended]]
+        /\ txsProcessed' = txsProcessed \cup {tx}
 
 (* **************************** *)
-(*  Main #3 : commit to history *)
+(*     Action : new tx rcv'd    *)
 (* **************************** *)
 
-CommitToHistoryPerMBs(numMB) ==
-    IF
-      EnoughMicroBlocks(numMB) \* condition to trigger DS to gen DSBlock
-    THEN 
-      LET 
-        dsBlock == DSAgreesOnFinalBlock \* collate txs and commit to history
-      IN
-        /\ historyOfBlocks' = historyOfBlocks \cup {dsBlock}
-        /\ \A id \in shardID : \* upon pushing to history, empty the microBlocks
-                microBlocks' = [microBlocks EXCEPT ! [id].txsAgreed = <<>>] 
-        /\ UNCHANGED <<epoch, nodesZilliqa, shardStructure, faultyTxs>>
-        /\ UNCHANGED cnsvars
-    ELSE 
-      /\ UNCHANGED zilvars
-      /\ UNCHANGED cnsvars
+NewTxRcvd(tx, sender) ==
+  (*************************************************************************)
+  (* ACTION: Zilliqa receives a new transaction from the 'sender' node     *)
+  (*         per some num of txs rcv'd, collate txs into a microblock and  *)
+  (*         commit the microblock to the historyOfBlocks                  *)
+  (*         it processes the tx only when the sender is a Zilliqa node    *)
+  (*         and when the tx has not been processed already                *)
+  (*************************************************************************)
+    /\ IF \* can DS nodes collate and commit final blcok to history
+            /\ numTxsRcvd  # 0
+            /\ numTxsRcvd % 5 = 0 \* per 5 txs received
+       THEN
+            /\ TC!TCNext \* DS nodes run consensus before committing final blcok
+            /\ historyOfBlocks' = historyOfBlocks \cup 
+                    {[epochTerm |-> epoch, txsCollated |-> CollateMicroBlocksTxs(<<>>, 0)]}
+            /\ epoch' = epoch + 1
+            /\ \A id \in shardID : EmptyMicroBlock(id)
+       ELSE 
+            /\ UNCHANGED <<historyOfBlocks, epoch>>
+            /\ UNCHANGED cnsvars
+    /\ IF \* is it coming from the participating node and has the tx not been processed yet
+            /\ IsElementInSet(nodesZilliqa, sender)
+            /\ IsElementInSet(Tx \ txsProcessed, tx)
+            /\ AtTheRightEpochTerm
+       THEN
+            /\ numTxsRcvd' = numTxsRcvd + 1   \* increment numTxsRcvd by 1
+            /\ timeCounter' = timeCounter + 1 \* increment timeCounter by 1
+            /\  \* simplified verification procedure
+                \/  /\ tx[2] = TRUE \* update microBlock of a relevant shard
+                    /\ ShardProcessTx(FindShardIDofNode(sender), tx)
+                    /\ UNCHANGED <<faultyTxs>>
+                \/  /\ tx[2] = FALSE
+                    /\ faultyTxs' = faultyTxs \cup {tx}
+                    /\ UNCHANGED <<microBlocks, txsProcessed>>
+            /\ UNCHANGED <<nodesZilliqa, shardStructure>>
+       ELSE
+            /\ UNCHANGED <<nodesZilliqa, shardStructure, timeCounter, numTxsRcvd, microBlocks, txsProcessed, faultyTxs>>
 
 -----------------------------------------------------------------------------
 
@@ -295,7 +239,7 @@ EnoughTimePassed(cnt) ==
     /\ timeCounter % cnt = 0
 
 (* **************************** *)
-(*      Main #4 : time out      *)
+(*       Action : time out      *)
 (* **************************** *)
 
 TimeOut ==
@@ -304,7 +248,7 @@ TimeOut ==
   (*         set the global glock timeCounter to 0                         *)
   (*         keep microBlocks, to be committed to history in next epoch    *)
   (*************************************************************************)
-    IF EnoughTimePassed(3)
+    IF EnoughTimePassed(10)
     THEN /\ epoch' = epoch + 1
          /\ \* synchronize epoch across the protocol by updating epochTerm for every shard ID
            \A sID \in shardID : microBlocks' = [microBlocks EXCEPT ! [sID] =
@@ -318,65 +262,19 @@ TimeOut ==
 
 -----------------------------------------------------------------------------
 
-\* condition refers to "for every 'num' number of transactions received"
-ReceivedNumTxs(num) ==
-    /\ numTxsRcvd # 0
-    /\ numTxsRcvd % num = 0
-
-\* select a non-DS random shard and avoid selecting a shard whose seq is empty
-RECURSIVE ChooseNonDSNonEmptyShardID(_)
-ChooseNonDSNonEmptyShardID(toExclude) ==
-    LET tempID == RandomElement(shardID \ toExclude)
-    IN 
-      IF shardStructure[tempID] # <<>>
-      THEN tempID
-      ELSE 
-        LET updatedToExclude == toExclude \cup {tempID}
-        IN ChooseNonDSNonEmptyShardID(updatedToExclude)
-    (* Note : not necessary given that shard size remains in [minSize, maxSize]
-     *        also recursive function slows down the model checking process *)
-
-(* **************************** *)
-(*   Main #5 : update DS shard  *)
-(* **************************** *)
-
-UpdateDSCommittee(othershID) ==
-    IF ReceivedNumTxs(3)
-    THEN     
-        LET 
-            oldestMemberDS == Head(shardStructure[0])
-            restPrevMembersDS == Tail(shardStructure[0])
-            oldestMemberOther == Head(shardStructure[othershID])
-            restPrevMembersOther == Tail(shardStructure[othershID])
-        IN
-          /\ shardStructure' = [shardStructure EXCEPT ! [othershID] = Append(restPrevMembersOther, oldestMemberDS),
-                                                      ! [0] = Append(restPrevMembersDS, oldestMemberOther)]
-          /\ timeCounter' = timeCounter + 1
-          /\ UNCHANGED <<epoch, nodesZilliqa, microBlocks, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
-          \* sequence works in FIFO order so head refers to oldest, etc.
-          /\ UNCHANGED cnsvars
-    ELSE 
-        /\ UNCHANGED zilvars \* tuple of all the global variables
-        /\ UNCHANGED cnsvars
-
------------------------------------------------------------------------------
-
 nonFaulty == Tx \ faultyTxs
 
 Next ==
   (*************************************************************************)
   (* POSSIBLE MOVES:                                                       *)
-  (*  1. a new non-participating node joins the protocol                   *)
-  (*  2. the protocol receives a new transaction                           *)
-  (*  3. given enough micro blocks, a ds block is committed to history     *)
-  (*  4. if enough time has passed, then time out and move to next epoch   *)
-  (*  5. upon receiving some number of txs, the DS committee is updated    *)
+  (*  1. a new node joins the protocol                                     *)
+  (*  2. a new transaction is received                                     *)
+  (*     - given enough microblocks, DS block is committed to history      *)
+  (*  3. if enough time has passed, then time out and move to next epoch   *)
   (*************************************************************************)
     \/ \E newNode \in Node : NewNodeJoins(newNode)
-    \/ \E newTx \in nonFaulty, sndr \in Node : NewTxRcvd(newTx, sndr)
-    \/ CommitToHistoryPerMBs(5)
+    \/ \E newTx \in Tx, sndr \in Node : NewTxRcvd(newTx, sndr)
     \/ TimeOut
-    \/ UpdateDSCommittee(RandomElement(shardID \ {0}))
 
 -----------------------------------------------------------------------------
 
@@ -387,7 +285,7 @@ Next ==
 \* - below makes checking via TLC intractable
 \*   myview == <<microBlocks>>
 \* - checked below separately
-  myview == <<epoch, nodesZilliqa, shardStructure>>
+  myview == <<epoch, nodesZilliqa, shardStructure, numTxsRcvd, txsProcessed>>
 \*   myview == <<epoch, nodesZilliqa, shardStructure, txsProcessed>>
 
 -----------------------------------------------------------------------------
@@ -456,5 +354,39 @@ AfterSomeTime ==
 \* DSBlock == [epochTerm : Nat, txsCollated : Tx]
 \* note : separate definition of DS Block removed
 \*        it is implicit structure in the history set, no need for a separate definition
+
+-----------------------------------------------------------------------------
+
+\* Below are additional actions to be incorporated in future work
+
+\* condition refers to "for every 'num' number of transactions received"
+ReceivedNumTxs(num) ==
+    /\ numTxsRcvd # 0
+    /\ numTxsRcvd % num = 0
+
+(* **************************** *)
+(*   Action : update DS shard   *)
+(* **************************** *)
+
+UpdateDSCommittee(othershID) ==
+    IF ReceivedNumTxs(3)
+    THEN     
+        LET 
+            oldestMemberDS == Head(shardStructure[0])
+            restPrevMembersDS == Tail(shardStructure[0])
+            oldestMemberOther == Head(shardStructure[othershID])
+            restPrevMembersOther == Tail(shardStructure[othershID])
+        IN
+          /\ shardStructure' = [shardStructure EXCEPT ! [othershID] = Append(restPrevMembersOther, oldestMemberDS),
+                                                      ! [0] = Append(restPrevMembersDS, oldestMemberOther)]
+          /\ timeCounter' = timeCounter + 1
+          /\ UNCHANGED <<epoch, nodesZilliqa, microBlocks, historyOfBlocks, numTxsRcvd, txsProcessed, faultyTxs>>
+          \* sequence works in FIFO order so head refers to oldest, etc.
+          /\ UNCHANGED cnsvars
+    ELSE 
+        /\ UNCHANGED zilvars \* tuple of all the global variables
+        /\ UNCHANGED cnsvars
+
+-----------------------------------------------------------------------------
 
 =============================================================================
