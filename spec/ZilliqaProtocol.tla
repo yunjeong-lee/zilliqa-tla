@@ -71,7 +71,7 @@ MembersOfShard(id, ret) ==
     LET shardSeq == shardStructure[id]
     IN \A i \in 1..Len(shardSeq) : {shardSeq[i][1]} \cup ret
 
-BFT == INSTANCE TwoPhaseConsensus WITH Backup <- BU
+BFT == INSTANCE BFTConsensus WITH Backup <- BU
 
 bftvars == <<backupState, leaderState, leaderPrepared, msgs>>
 
@@ -495,16 +495,15 @@ Next ==
 
 -----------------------------------------------------------------------------
 
-\* checked below separately
-\* myview == <<epoch, nodesZilliqa, shardStructure>>
-\* myview == <<epoch, nodesZilliqa, shardStructure, txsProcessed>>
+myview == <<epoch, microBlocks, shardStructure, txsProcessed, numTxsRcvd, historyOfBlocks, timeCounter>>
 
-myview == <<epoch, microBlocks, shardStructure, txsProcessed, numTxsRcvd, historyOfBlocks>>
-
-\* excluded : microBlocks, timeCounter
-
-\* below makes checking via TLC intractable
-\* myview == <<microBlocks>>
+\* notes :
+\* - initially excluded : microBlocks, timeCounter
+\* - below makes checking via TLC intractable
+\*   myview == <<microBlocks>>
+\* - checked below separately
+\*   myview == <<epoch, nodesZilliqa, shardStructure>>
+\*   myview == <<epoch, nodesZilliqa, shardStructure, txsProcessed>>
 
 -----------------------------------------------------------------------------
 

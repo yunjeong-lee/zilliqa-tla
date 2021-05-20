@@ -71,7 +71,7 @@ LeaderRcvPrepared(n) ==
 LeaderCommit ==
   (*************************************************************************)
   (* The leader commits the transaction; enabled iff the leader is in its  *)
-  (* initial state and every backup has sent a "Prepared" message.         *)
+  (* initial state and a majority of backups has sent a "Prepared" message.*)
   (*************************************************************************)
   /\ leaderState = "init"
   /\ Cardinality(leaderPrepared) > Cardinality(Backup) \div 2 \* a majority is prepared
