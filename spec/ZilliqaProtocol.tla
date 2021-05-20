@@ -56,9 +56,7 @@ zilvars == <<epoch, nodesZilliqa, shardStructure, microBlocks, historyOfBlocks, 
 (********************** parameters of TCommit *****************************)
 
 VARIABLE cnsState
-
 cnsvars == <<cnsState>>
-
 cnsNodes == {"n1", "n2", "n3"}
     \* suppose only the nodes from DS shard are participating
 
@@ -404,13 +402,12 @@ TransactionFinality ==
     \A id \in shardID :
         \A index \in 1..Len(microBlocks[id].txsAgreed) :
           LET txElem == microBlocks[id].txsAgreed[index]
-          IN \E block \in historyOfBlocks :
-                \* \E ind \in 1..Len(block.txsCollated) :
-                    SeqContains(block.txsCollated, txElem) 
-               
-               \* changed above 3 lines from below
-               \* IsElementInSet(txsProcessed, txElem)
+          IN
+            IsElementInSet(txsProcessed, txElem)
 
+            \* \E block \in historyOfBlocks :
+            \*     SeqContains(block.txsCollated, txElem) 
+               
 
 \* once rcv tx, it should not be processed by two different shards
 \* that is once rcv tx, it will be processed by a single shard
