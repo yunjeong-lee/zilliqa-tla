@@ -89,6 +89,10 @@ Init ==
 
 -----------------------------------------------------------------------------
 
+(***************************************************************************)
+(*                                Actions                                  *)
+(***************************************************************************)
+
 nonParticipating == Node \ nodesZilliqa
 Participating == Node \ nonParticipating
 notReceivedSofar == Tx \ txsProcessed
@@ -113,9 +117,15 @@ EnoughTxsRcvd(cnt) ==
     /\ numTxsRcvd # 0
     /\ numTxsRcvd % cnt = 0
 
-(***************************************************************************)
-(*                                Actions                                  *)
-(***************************************************************************)
+\* cutomized RandomElement to make it nondeterministic
+CustomRandomElement(S) == CHOOSE x \in S : TRUE
+    \* comment :
+    \*  the default RandomElement operator from Randomization module is
+    \*  using pseudo-random number generator, hence not nondeterministic
+    \*  despite how the definition looks, so we define a customized 
+    \*  RandomElement operator to ensure nondeterminism
+
+-----------------------------------------------------------------------------
 
 (* ----------------------------------------------- *)
 (* -- Every new node does a PoW to join Zilliqa -- *)
@@ -124,7 +134,7 @@ RECURSIVE ProofOfWork(_)
 ProofOfWork(node) ==
     LET 
     \* hash based on node and gen shardNum (based on randomness)
-       hash == RandomElement(1..10) + RandomElement(1..node[2])
+       hash == CustomRandomElement(1..10) + CustomRandomElement(1..node[2])
        difficulty == node[2] \* if too difficult, running TLC becomes slower
        shardnum == node[2] % Cardinality(shardID)
        prevMembers == shardStructure[shardnum]
@@ -388,7 +398,7 @@ myview == <<epoch, numTxsRcvd, txsProcessed, faultyTxs, numTxsRcvd, timeCounter>
 DSCommitConstr == Cardinality(historyOfBlocks) < 2
 
 \* stop after sufficient amount of time has passed
-TimeConstr == epoch < 5
+TimeConstr == epoch < 3
 
 (* Invariants to make checking of this model via TLC tractable *)
 
