@@ -2,7 +2,7 @@
 TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
 @!@!@ENDMSG 2262 @!@!@
 @!@!@STARTMSG 2187:0 @!@!@
-Running breadth-first search Model-Checking with fp 118 and seed -3675220759808481736 with 1 worker on 4 cores with 1742MB heap and 64MB offheap memory [pid: 14370] (Linux 5.4.0-72-generic amd64, Ubuntu 11.0.11 x86_64, MSBDiskFPSet, DiskStateQueue).
+Running breadth-first search Model-Checking with fp 102 and seed 1690563416178519481 with 1 worker on 4 cores with 1742MB heap and 64MB offheap memory [pid: 31927] (Linux 5.4.0-72-generic amd64, Ubuntu 11.0.11 x86_64, MSBDiskFPSet, DiskStateQueue).
 @!@!@ENDMSG 2187 @!@!@
 @!@!@STARTMSG 2220:0 @!@!@
 Starting SANY...
@@ -29,22 +29,22 @@ Semantic processing of module ZilliqaModel
 SANY finished.
 @!@!@ENDMSG 2219 @!@!@
 @!@!@STARTMSG 2185:0 @!@!@
-Starting... (2021-05-21 01:21:14)
+Starting... (2021-05-21 21:33:34)
 @!@!@ENDMSG 2185 @!@!@
 @!@!@STARTMSG 2189:0 @!@!@
 Computing initial states...
 @!@!@ENDMSG 2189 @!@!@
 @!@!@STARTMSG 2190:0 @!@!@
-Finished computing initial states: 1 distinct state generated at 2021-05-21 01:21:14.
+Finished computing initial states: 1 distinct state generated at 2021-05-21 21:33:35.
 @!@!@ENDMSG 2190 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(6) at 2021-05-21 01:21:17: 36,277 states generated (36,277 s/min), 1,171 distinct states found (1,171 ds/min), 777 states left on queue.
+Progress(5) at 2021-05-21 21:33:38: 21,406 states generated (21,406 s/min), 757 distinct states found (757 ds/min), 571 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(11) at 2021-05-21 01:22:17: 1,259,555 states generated (1,223,278 s/min), 28,570 distinct states found (27,399 ds/min), 8,043 states left on queue.
+Progress(10) at 2021-05-21 21:34:38: 1,197,117 states generated (1,175,711 s/min), 21,022 distinct states found (20,265 ds/min), 8,615 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2021-05-21 01:22:17
+The coverage statistics at 2021-05-21 21:34:38
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2773:0 @!@!@
 <Init line 78, col 1 to line 78, col 4 of module ZilliqaProtocol>: 1:1
@@ -53,526 +53,508 @@ The coverage statistics at 2021-05-21 01:22:17
   line 79, col 5 to line 88, col 28 of module ZilliqaProtocol: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<NewNodeJoins line 134, col 1 to line 134, col 21 of module ZilliqaProtocol>: 6823:369486
+<NewNodeJoins line 144, col 1 to line 144, col 21 of module ZilliqaProtocol>: 11:223344
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 139, col 8 to line 139, col 44 of module ZilliqaProtocol: 369504
+  line 149, col 8 to line 149, col 44 of module ZilliqaProtocol: 223362
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 369504
+  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 223362
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 3318693
+  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 1708108
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 369504
+  |||line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 1708408
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 139, col 23 to line 139, col 34 of module ZilliqaProtocol: 369504
+  |||line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 1708408
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 139, col 37 to line 139, col 43 of module ZilliqaProtocol: 369504
+  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 223398
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 141, col 12 to line 141, col 28 of module ZilliqaProtocol: 295420
+  |line 149, col 23 to line 149, col 34 of module ZilliqaProtocol: 223398
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 142, col 12 to line 142, col 28 of module ZilliqaProtocol: 295425
+  |line 149, col 37 to line 149, col 43 of module ZilliqaProtocol: 223398
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 144, col 12 to line 144, col 41 of module ZilliqaProtocol: 74072
+  line 151, col 12 to line 151, col 28 of module ZilliqaProtocol: 129716
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 145, col 12 to line 145, col 54 of module ZilliqaProtocol: 74072
+  line 152, col 12 to line 152, col 28 of module ZilliqaProtocol: 129716
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 145, col 28 to line 145, col 54 of module ZilliqaProtocol: 74072
+  line 154, col 12 to line 154, col 41 of module ZilliqaProtocol: 93658
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 150, col 13 to line 151, col 94 of module ZilliqaProtocol: 74072
+  |line 154, col 27 to line 154, col 41 of module ZilliqaProtocol: 93661
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 151, col 15 to line 151, col 94 of module ZilliqaProtocol: 74072
+  line 155, col 12 to line 155, col 54 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 16 to line 151, col 29 of module ZilliqaProtocol: 74072
+  |line 155, col 28 to line 155, col 54 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 41 to line 151, col 48 of module ZilliqaProtocol: 74072
+  line 160, col 13 to line 161, col 94 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 147, col 27 to line 147, col 46 of module ZilliqaProtocol: 74072
+  |line 161, col 15 to line 161, col 94 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 118, col 22 to line 118, col 28 of module ZilliqaProtocol: 273454
+  ||line 161, col 16 to line 161, col 29 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 119, col 20 to line 119, col 49 of module ZilliqaProtocol: 74072
+  ||line 161, col 41 to line 161, col 48 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 117, col 16 to line 117, col 63 of module ZilliqaProtocol: 273454
+  |||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 120, col 23 to line 120, col 46 of module ZilliqaProtocol: 74072
+  ||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 354001
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 122, col 8 to line 124, col 29 of module ZilliqaProtocol: 273454
+  ||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 122, col 11 to line 122, col 69 of module ZilliqaProtocol: 273454
+  ||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 354001
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 12 to line 122, col 31 of module ZilliqaProtocol: 273454
+  ||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 38 to line 122, col 68 of module ZilliqaProtocol: 74072
+  ||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 354001
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 123, col 13 to line 123, col 20 of module ZilliqaProtocol: 74072
+  |||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 354001
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 124, col 13 to line 124, col 29 of module ZilliqaProtocol: 199382
+  ||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 354001
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 147, col 39 to line 147, col 45 of module ZilliqaProtocol: 74072
+  ||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 53 to line 151, col 93 of module ZilliqaProtocol: 74072
+  |||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 151, col 60 to line 151, col 83 of module ZilliqaProtocol: 74072
+  |||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 260337
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 151, col 60 to line 151, col 73 of module ZilliqaProtocol: 74072
+  ||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 151, col 75 to line 151, col 82 of module ZilliqaProtocol: 74072
+  ||line 161, col 53 to line 161, col 93 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 147, col 27 to line 147, col 46 of module ZilliqaProtocol: 74072
+  |||line 161, col 60 to line 161, col 83 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 118, col 22 to line 118, col 28 of module ZilliqaProtocol: 273154
+  ||||line 161, col 60 to line 161, col 73 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 119, col 20 to line 119, col 49 of module ZilliqaProtocol: 74072
+  ||||line 161, col 75 to line 161, col 82 of module ZilliqaProtocol: 93664
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 117, col 16 to line 117, col 63 of module ZilliqaProtocol: 273154
+  |||||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 93665
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 120, col 23 to line 120, col 46 of module ZilliqaProtocol: 74072
+  ||||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 353354
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 8 to line 124, col 29 of module ZilliqaProtocol: 273154
+  ||||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 93670
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 122, col 11 to line 122, col 69 of module ZilliqaProtocol: 273154
+  ||||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 353360
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||||line 122, col 12 to line 122, col 31 of module ZilliqaProtocol: 273154
+  ||||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 93670
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||||line 122, col 38 to line 122, col 68 of module ZilliqaProtocol: 74072
+  ||||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 353360
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 123, col 13 to line 123, col 20 of module ZilliqaProtocol: 74072
+  |||||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 353360
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 124, col 13 to line 124, col 29 of module ZilliqaProtocol: 199082
+  ||||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 353360
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 147, col 39 to line 147, col 45 of module ZilliqaProtocol: 74072
+  ||||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 93670
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 151, col 86 to line 151, col 92 of module ZilliqaProtocol: 74072
+  |||||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 93670
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 152, col 16 to line 152, col 101 of module ZilliqaProtocol: 74072
+  |||||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 259690
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 153, col 16 to line 153, col 32 of module ZilliqaProtocol: 74072
+  ||||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 93670
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 161, col 86 to line 161, col 92 of module ZilliqaProtocol: 93670
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 162, col 16 to line 162, col 101 of module ZilliqaProtocol: 93646
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 163, col 16 to line 163, col 32 of module ZilliqaProtocol: 93646
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<NewTxRcvd line 204, col 1 to line 204, col 21 of module ZilliqaProtocol>: 20460:888857
+<NewTxRcvd line 223, col 1 to line 223, col 21 of module ZilliqaProtocol>: 18518:971817
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 213, col 13 to line 213, col 28 of module ZilliqaProtocol: 4434080
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 29001008
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 215, col 16 to line 215, col 24 of module ZilliqaProtocol: 1
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 28029242
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 216, col 16 to line 217, col 79 of module ZilliqaProtocol: 0
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 28029266
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 218, col 16 to line 218, col 33 of module ZilliqaProtocol: 0
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 2681232
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 220, col 16 to line 223, col 105 of module ZilliqaProtocol: 0
+  line 231, col 23 to line 231, col 34 of module ZilliqaProtocol: 2681234
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 225, col 16 to line 225, col 64 of module ZilliqaProtocol: 888864
+  line 231, col 37 to line 231, col 42 of module ZilliqaProtocol: 2681238
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 226, col 16 to line 226, col 32 of module ZilliqaProtocol: 888864
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 12634245
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 228, col 13 to line 230, col 34 of module ZilliqaProtocol: 4434109
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 11662407
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 228, col 16 to line 228, col 51 of module ZilliqaProtocol: 4434113
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 11662424
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 4434116
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 1557208
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 39824562
+  line 232, col 23 to line 232, col 39 of module ZilliqaProtocol: 1557210
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 39824582
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||||line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 39824603
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 4434128
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||line 228, col 31 to line 228, col 42 of module ZilliqaProtocol: 4434130
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||line 228, col 45 to line 228, col 50 of module ZilliqaProtocol: 4434134
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 229, col 16 to line 229, col 52 of module ZilliqaProtocol: 3545272
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 3545275
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 23044297
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||||line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 23044321
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||||line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 23044326
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 3545286
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||line 229, col 31 to line 229, col 47 of module ZilliqaProtocol: 3545289
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||line 229, col 31 to line 229, col 32 of module ZilliqaProtocol: 3545292
+  |line 232, col 23 to line 232, col 24 of module ZilliqaProtocol: 1557213
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2775:0 @!@!@
-  ||||line 14, col 5 to line 16, col 75 of module ZilliqaModel: 3545295:26589699
+  ||line 14, col 5 to line 16, col 75 of module ZilliqaModel: 1557216:13219719
 @!@!@ENDMSG 2775 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 6 to line 14, col 20 of module ZilliqaModel: 3545299
+  |||line 14, col 6 to line 14, col 20 of module ZilliqaModel: 1557220
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 23 to line 14, col 37 of module ZilliqaModel: 3545302
+  ||||line 14, col 15 to line 14, col 18 of module ZilliqaModel: 1557222
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 40 to line 14, col 54 of module ZilliqaModel: 3545304
+  |||line 14, col 23 to line 14, col 37 of module ZilliqaModel: 1557224
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 57 to line 14, col 71 of module ZilliqaModel: 3545304
+  |||line 14, col 40 to line 14, col 54 of module ZilliqaModel: 1557227
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 6 to line 15, col 20 of module ZilliqaModel: 3545304
+  |||line 14, col 57 to line 14, col 71 of module ZilliqaModel: 1557229
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 23 to line 15, col 37 of module ZilliqaModel: 3545304
+  |||line 15, col 6 to line 15, col 20 of module ZilliqaModel: 1557232
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 40 to line 15, col 54 of module ZilliqaModel: 3545307
+  |||line 15, col 23 to line 15, col 37 of module ZilliqaModel: 1557235
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 15, col 49 to line 15, col 52 of module ZilliqaModel: 3545309
+  |||line 15, col 40 to line 15, col 54 of module ZilliqaModel: 1557311
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 57 to line 15, col 71 of module ZilliqaModel: 3545312
+  |||line 15, col 57 to line 15, col 71 of module ZilliqaModel: 1557312
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 6 to line 16, col 20 of module ZilliqaModel: 3545315
+  |||line 16, col 6 to line 16, col 20 of module ZilliqaModel: 1557312
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 23 to line 16, col 38 of module ZilliqaModel: 3545316
+  |||line 16, col 23 to line 16, col 38 of module ZilliqaModel: 1557312
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 16, col 33 to line 16, col 36 of module ZilliqaModel: 3545316
+  |||line 16, col 41 to line 16, col 56 of module ZilliqaModel: 1557396
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 41 to line 16, col 56 of module ZilliqaModel: 3545316
+  |||line 16, col 59 to line 16, col 74 of module ZilliqaModel: 1557402
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 59 to line 16, col 74 of module ZilliqaModel: 3545316
+  |line 232, col 28 to line 232, col 39 of module ZilliqaProtocol: 1557404
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 229, col 36 to line 229, col 47 of module ZilliqaProtocol: 3545317
+  line 232, col 42 to line 232, col 43 of module ZilliqaProtocol: 1557406
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 229, col 50 to line 229, col 51 of module ZilliqaProtocol: 3545320
+  line 191, col 45 to line 191, col 78 of module ZilliqaProtocol: 5832024
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 230, col 16 to line 230, col 34 of module ZilliqaProtocol: 3545323
+  |line 191, col 45 to line 191, col 70 of module ZilliqaProtocol: 2916018
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 181, col 24 to line 181, col 78 of module ZilliqaProtocol: 3545325
+  |line 191, col 74 to line 191, col 78 of module ZilliqaProtocol: 2916021
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 181, col 45 to line 181, col 78 of module ZilliqaProtocol: 10635984
+  line 191, col 35 to line 191, col 41 of module ZilliqaProtocol: 972008
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 181, col 45 to line 181, col 70 of module ZilliqaProtocol: 10635993
+  line 234, col 8 to line 234, col 35 of module ZilliqaProtocol: 972010
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 181, col 45 to line 181, col 60 of module ZilliqaProtocol: 10636002
+  line 235, col 8 to line 235, col 37 of module ZilliqaProtocol: 972011
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 181, col 45 to line 181, col 55 of module ZilliqaProtocol: 10636011
+  line 113, col 8 to line 113, col 21 of module ZilliqaProtocol: 972082
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 181, col 57 to line 181, col 59 of module ZilliqaProtocol: 10636017
+  line 114, col 8 to line 114, col 27 of module ZilliqaProtocol: 970308
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 181, col 74 to line 181, col 78 of module ZilliqaProtocol: 10636026
+  line 64, col 35 to line 64, col 45 of module ZilliqaProtocol: 1365409
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 181, col 35 to line 181, col 41 of module ZilliqaProtocol: 3545346
+  line 64, col 59 to line 64, col 69 of module ZilliqaProtocol: 8192448
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 232, col 16 to line 232, col 43 of module ZilliqaProtocol: 0
+  line 52, col 25 to line 52, col 34 of module TCommit: 1024056
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 232, col 30 to line 232, col 43 of module ZilliqaProtocol: 3545353
+  line 44, col 18 to line 46, col 66 of module TCommit: 1024056
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 233, col 16 to line 233, col 45 of module ZilliqaProtocol: 0
+  line 47, col 21 to line 47, col 58 of module TCommit: 1024056
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 233, col 31 to line 233, col 45 of module ZilliqaProtocol: 3545359
+  line 31, col 31 to line 31, col 54 of module TCommit: 3072168
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 235, col 24 to line 235, col 35 of module ZilliqaProtocol: 3545363
+  line 31, col 26 to line 31, col 27 of module TCommit: 1024056
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 192, col 12 to line 193, col 82 of module ZilliqaProtocol: 0
+  line 49, col 21 to line 49, col 64 of module TCommit: 1024056
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 192, col 27 to line 193, col 82 of module ZilliqaProtocol: 3545364
+  line 52, col 46 to line 52, col 46 of module TCommit: 1024056
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 192, col 28 to line 192, col 38 of module ZilliqaProtocol: 3545364
+  line 52, col 20 to line 52, col 21 of module TCommit: 341352
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 192, col 47 to line 193, col 81 of module ZilliqaProtocol: 3545199
+  line 240, col 16 to line 241, col 79 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 193, col 29 to line 193, col 81 of module ZilliqaProtocol: 3545364
+  |line 240, col 35 to line 241, col 79 of module ZilliqaProtocol: 2048112
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 193, col 44 to line 193, col 53 of module ZilliqaProtocol: 3545366
+  line 242, col 16 to line 242, col 33 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 188, col 23 to line 188, col 49 of module ZilliqaProtocol: 3545372
+  |line 242, col 25 to line 242, col 33 of module ZilliqaProtocol: 2048112
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 188, col 23 to line 188, col 39 of module ZilliqaProtocol: 3545376
+  line 243, col 16 to line 246, col 105 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 188, col 23 to line 188, col 33 of module ZilliqaProtocol: 3545379
+  |line 244, col 17 to line 246, col 105 of module ZilliqaProtocol: 2048112
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 188, col 35 to line 188, col 38 of module ZilliqaProtocol: 3545383
+  line 248, col 16 to line 248, col 51 of module ZilliqaProtocol: 971848
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 193, col 70 to line 193, col 80 of module ZilliqaProtocol: 3545387
+  line 249, col 16 to line 249, col 32 of module ZilliqaProtocol: 971849
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 187, col 24 to line 187, col 64 of module ZilliqaProtocol: 3545391
+  line 252, col 16 to line 252, col 27 of module ZilliqaProtocol: 3992376
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 187, col 24 to line 187, col 50 of module ZilliqaProtocol: 3545395
+  |line 252, col 16 to line 252, col 20 of module ZilliqaProtocol: 3020244
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 187, col 24 to line 187, col 40 of module ZilliqaProtocol: 3545399
+  |line 252, col 24 to line 252, col 27 of module ZilliqaProtocol: 3020261
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 187, col 24 to line 187, col 34 of module ZilliqaProtocol: 3545403
+  line 202, col 12 to line 203, col 82 of module ZilliqaProtocol: 972153
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 187, col 36 to line 187, col 39 of module ZilliqaProtocol: 3545406
+  |line 202, col 27 to line 203, col 82 of module ZilliqaProtocol: 3020268
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 187, col 55 to line 187, col 64 of module ZilliqaProtocol: 3545409
+  line 204, col 12 to line 204, col 49 of module ZilliqaProtocol: 972158
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 194, col 12 to line 194, col 49 of module ZilliqaProtocol: 0
+  |line 204, col 28 to line 204, col 49 of module ZilliqaProtocol: 972160
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 236, col 39 to line 236, col 63 of module ZilliqaProtocol: 3545416
+  line 253, col 31 to line 253, col 55 of module ZilliqaProtocol: 3020275
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 3545420
+  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 3020276
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 7094758
+  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 6142571
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 7094764
+  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 6142578
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 27535866
+  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 17823648
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 7094778
+  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 6142590
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 100, col 34 to line 100, col 39 of module ZilliqaProtocol: 7094787
+  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 6142593
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 7094796
+  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 6142593
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 7094805
+  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 3020390
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 3545446
+  |line 253, col 49 to line 253, col 54 of module ZilliqaProtocol: 3020391
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 236, col 57 to line 236, col 62 of module ZilliqaProtocol: 3545448
+  line 253, col 58 to line 253, col 59 of module ZilliqaProtocol: 3020392
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 236, col 66 to line 236, col 67 of module ZilliqaProtocol: 3545451
+  line 254, col 16 to line 254, col 38 of module ZilliqaProtocol: 971850
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 237, col 24 to line 237, col 46 of module ZilliqaProtocol: 0
+  line 255, col 16 to line 255, col 28 of module ZilliqaProtocol: 3020403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 238, col 24 to line 238, col 36 of module ZilliqaProtocol: 3545457
+  line 256, col 16 to line 256, col 47 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 238, col 24 to line 238, col 28 of module ZilliqaProtocol: 3545460
+  line 257, col 16 to line 257, col 54 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 238, col 24 to line 238, col 25 of module ZilliqaProtocol: 3545463
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 238, col 32 to line 238, col 36 of module ZilliqaProtocol: 3545466
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 239, col 24 to line 239, col 55 of module ZilliqaProtocol: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 240, col 24 to line 240, col 62 of module ZilliqaProtocol: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 241, col 16 to line 241, col 57 of module ZilliqaProtocol: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 243, col 16 to line 243, col 45 of module ZilliqaProtocol: 888918
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 244, col 16 to line 244, col 94 of module ZilliqaProtocol: 888864
+  line 258, col 8 to line 258, col 49 of module ZilliqaProtocol: 971851
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TimeOut line 257, col 1 to line 257, col 7 of module ZilliqaProtocol>: 1288:1288
+<TimeOut line 300, col 1 to line 300, col 7 of module ZilliqaProtocol>: 2510:2510
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 250, col 8 to line 250, col 22 of module ZilliqaProtocol: 21818
+  line 108, col 8 to line 108, col 22 of module ZilliqaProtocol: 14928
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 250, col 8 to line 250, col 18 of module ZilliqaProtocol: 20530
+  |line 108, col 8 to line 108, col 18 of module ZilliqaProtocol: 12418
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 251, col 8 to line 251, col 28 of module ZilliqaProtocol: 21817
+  line 109, col 8 to line 109, col 28 of module ZilliqaProtocol: 14927
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 251, col 8 to line 251, col 24 of module ZilliqaProtocol: 20529
+  |line 109, col 8 to line 109, col 24 of module ZilliqaProtocol: 12417
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 264, col 8 to line 264, col 25 of module ZilliqaProtocol: 1288
+  line 307, col 8 to line 307, col 25 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 266, col 8 to line 269, col 121 of module ZilliqaProtocol: 1288
+  line 309, col 8 to line 312, col 121 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 270, col 8 to line 270, col 37 of module ZilliqaProtocol: 1288
+  line 313, col 8 to line 313, col 37 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 271, col 8 to line 271, col 103 of module ZilliqaProtocol: 1288
+  line 314, col 8 to line 314, col 103 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 272, col 8 to line 272, col 24 of module ZilliqaProtocol: 1288
+  line 315, col 8 to line 315, col 24 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
 <TypeOK line 68, col 1 to line 68, col 6 of module ZilliqaProtocol>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 28574
+  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 28574
+  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 28574
+  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 28574
+  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 28574
+  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 28574
+  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 28574
+  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 28574
+  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 85722
+  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 63159
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 28574
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2774:0 @!@!@
-<TransactionFinality line 298, col 1 to line 298, col 19 of module ZilliqaProtocol>
-@!@!@ENDMSG 2774 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 299, col 5 to line 303, col 48 of module ZilliqaProtocol: 28575
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 300, col 9 to line 303, col 48 of module ZilliqaProtocol: 85725
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 299, col 15 to line 299, col 21 of module ZilliqaProtocol: 28575
+  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<DSCommitRecord line 351, col 1 to line 351, col 14 of module ZilliqaProtocol>
+<TransactionFinality line 341, col 1 to line 341, col 19 of module ZilliqaProtocol>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 351, col 19 to line 351, col 50 of module ZilliqaProtocol: 28575
+  line 342, col 5 to line 347, col 51 of module ZilliqaProtocol: 21053
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 343, col 9 to line 347, col 51 of module ZilliqaProtocol: 63159
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 344, col 25 to line 344, col 56 of module ZilliqaProtocol: 104759
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 347, col 13 to line 347, col 51 of module ZilliqaProtocol: 104759
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 347, col 16 to line 347, col 51 of module ZilliqaProtocol: 104759
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 104759
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 333666
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 104759
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 31 to line 347, col 42 of module ZilliqaProtocol: 104759
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 45 to line 347, col 50 of module ZilliqaProtocol: 104759
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 343, col 22 to line 343, col 54 of module ZilliqaProtocol: 63159
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 342, col 15 to line 342, col 21 of module ZilliqaProtocol: 21053
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<DSCommitRecord line 390, col 1 to line 390, col 14 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 390, col 19 to line 390, col 50 of module ZilliqaProtocol: 21053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2202:0 @!@!@
 End of statistics.
 @!@!@ENDMSG 2202 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(13) at 2021-05-21 01:23:17: 2,275,969 states generated (1,016,414 s/min), 52,292 distinct states found (23,722 ds/min), 12,288 states left on queue.
+Progress(12) at 2021-05-21 21:35:38: 2,438,849 states generated (1,241,732 s/min), 34,884 distinct states found (13,862 ds/min), 8,588 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(15) at 2021-05-21 01:24:17: 3,283,189 states generated (1,007,220 s/min), 71,578 distinct states found (19,286 ds/min), 12,288 states left on queue.
+Progress(13) at 2021-05-21 21:36:38: 3,735,875 states generated (1,297,026 s/min), 48,431 distinct states found (13,547 ds/min), 9,819 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2021-05-21 01:24:17
+The coverage statistics at 2021-05-21 21:36:38
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2773:0 @!@!@
 <Init line 78, col 1 to line 78, col 4 of module ZilliqaProtocol>: 1:1
@@ -581,394 +563,508 @@ The coverage statistics at 2021-05-21 01:24:17
   line 79, col 5 to line 88, col 28 of module ZilliqaProtocol: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<NewNodeJoins line 134, col 1 to line 134, col 21 of module ZilliqaProtocol>: 8651:1067238
+<NewNodeJoins line 144, col 1 to line 144, col 21 of module ZilliqaProtocol>: 12:695016
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 139, col 8 to line 139, col 44 of module ZilliqaProtocol: 1067238
+  line 149, col 8 to line 149, col 44 of module ZilliqaProtocol: 695016
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 1067238
+  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 695016
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 9689798
+  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 5619517
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 1067238
+  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 695016
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 139, col 23 to line 139, col 34 of module ZilliqaProtocol: 1067238
+  |line 149, col 23 to line 149, col 34 of module ZilliqaProtocol: 695016
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 139, col 37 to line 139, col 43 of module ZilliqaProtocol: 1067238
+  |line 149, col 37 to line 149, col 43 of module ZilliqaProtocol: 695016
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 141, col 12 to line 141, col 28 of module ZilliqaProtocol: 883362
+  line 151, col 12 to line 151, col 28 of module ZilliqaProtocol: 449613
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 142, col 12 to line 142, col 28 of module ZilliqaProtocol: 883362
+  line 152, col 12 to line 152, col 28 of module ZilliqaProtocol: 449613
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 144, col 12 to line 144, col 41 of module ZilliqaProtocol: 183876
+  line 154, col 12 to line 154, col 41 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 145, col 12 to line 145, col 54 of module ZilliqaProtocol: 183876
+  line 155, col 12 to line 155, col 54 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 150, col 13 to line 151, col 94 of module ZilliqaProtocol: 183876
+  line 160, col 13 to line 161, col 94 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 151, col 15 to line 151, col 94 of module ZilliqaProtocol: 183876
+  |line 161, col 15 to line 161, col 94 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 16 to line 151, col 29 of module ZilliqaProtocol: 183876
+  ||line 161, col 16 to line 161, col 29 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 41 to line 151, col 48 of module ZilliqaProtocol: 183876
+  ||line 161, col 41 to line 161, col 48 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 147, col 27 to line 147, col 46 of module ZilliqaProtocol: 183876
+  |||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 118, col 22 to line 118, col 28 of module ZilliqaProtocol: 678955
+  ||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 944610
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 119, col 20 to line 119, col 49 of module ZilliqaProtocol: 183876
+  ||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 117, col 16 to line 117, col 63 of module ZilliqaProtocol: 678955
+  ||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 944610
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 120, col 23 to line 120, col 46 of module ZilliqaProtocol: 183876
+  ||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 122, col 8 to line 124, col 29 of module ZilliqaProtocol: 678955
+  ||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 944610
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 122, col 11 to line 122, col 69 of module ZilliqaProtocol: 678955
+  |||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 944610
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 12 to line 122, col 31 of module ZilliqaProtocol: 678955
+  ||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 944610
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 38 to line 122, col 68 of module ZilliqaProtocol: 183876
+  ||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 123, col 13 to line 123, col 20 of module ZilliqaProtocol: 183876
+  |||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 124, col 13 to line 124, col 29 of module ZilliqaProtocol: 495079
+  |||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 699207
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 147, col 39 to line 147, col 45 of module ZilliqaProtocol: 183876
+  ||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 53 to line 151, col 93 of module ZilliqaProtocol: 183876
+  ||line 161, col 53 to line 161, col 93 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 151, col 60 to line 151, col 83 of module ZilliqaProtocol: 183876
+  |||line 161, col 60 to line 161, col 83 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 151, col 60 to line 151, col 73 of module ZilliqaProtocol: 183876
+  ||||line 161, col 60 to line 161, col 73 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 151, col 75 to line 151, col 82 of module ZilliqaProtocol: 183876
+  ||||line 161, col 75 to line 161, col 82 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 147, col 27 to line 147, col 46 of module ZilliqaProtocol: 183876
+  |||||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 118, col 22 to line 118, col 28 of module ZilliqaProtocol: 679233
+  ||||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 941775
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 119, col 20 to line 119, col 49 of module ZilliqaProtocol: 183876
+  ||||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 117, col 16 to line 117, col 63 of module ZilliqaProtocol: 679233
+  ||||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 941775
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 120, col 23 to line 120, col 46 of module ZilliqaProtocol: 183876
+  ||||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 8 to line 124, col 29 of module ZilliqaProtocol: 679233
+  ||||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 941775
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 122, col 11 to line 122, col 69 of module ZilliqaProtocol: 679233
+  |||||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 941775
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||||line 122, col 12 to line 122, col 31 of module ZilliqaProtocol: 679233
+  ||||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 941775
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||||line 122, col 38 to line 122, col 68 of module ZilliqaProtocol: 183876
+  ||||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 123, col 13 to line 123, col 20 of module ZilliqaProtocol: 183876
+  |||||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 124, col 13 to line 124, col 29 of module ZilliqaProtocol: 495357
+  |||||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 696372
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 147, col 39 to line 147, col 45 of module ZilliqaProtocol: 183876
+  ||||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 151, col 86 to line 151, col 92 of module ZilliqaProtocol: 183876
+  |||line 161, col 86 to line 161, col 92 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 152, col 16 to line 152, col 101 of module ZilliqaProtocol: 183876
+  line 162, col 16 to line 162, col 101 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 153, col 16 to line 153, col 32 of module ZilliqaProtocol: 183876
+  line 163, col 16 to line 163, col 32 of module ZilliqaProtocol: 245403
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<NewTxRcvd line 204, col 1 to line 204, col 21 of module ZilliqaProtocol>: 53447:2206500
+<NewTxRcvd line 223, col 1 to line 223, col 21 of module ZilliqaProtocol>: 45908:3038379
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 213, col 13 to line 213, col 28 of module ZilliqaProtocol: 12806856
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 100154974
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 215, col 16 to line 215, col 24 of module ZilliqaProtocol: 1
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 97116592
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 216, col 16 to line 217, col 79 of module ZilliqaProtocol: 0
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 97116594
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 218, col 16 to line 218, col 33 of module ZilliqaProtocol: 0
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 8340208
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 220, col 16 to line 223, col 105 of module ZilliqaProtocol: 0
+  line 231, col 23 to line 231, col 34 of module ZilliqaProtocol: 8340208
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 225, col 16 to line 225, col 64 of module ZilliqaProtocol: 2206500
+  line 231, col 37 to line 231, col 42 of module ZilliqaProtocol: 8340209
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 226, col 16 to line 226, col 32 of module ZilliqaProtocol: 2206501
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 39499009
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 228, col 13 to line 230, col 34 of module ZilliqaProtocol: 12806896
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 36460624
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 228, col 16 to line 228, col 51 of module ZilliqaProtocol: 12806899
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 36460624
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 12806902
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 5395376
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 116277697
+  line 232, col 23 to line 232, col 39 of module ZilliqaProtocol: 5395376
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 116277716
+  line 232, col 42 to line 232, col 43 of module ZilliqaProtocol: 5395376
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 116277731
+  line 191, col 45 to line 191, col 78 of module ZilliqaProtocol: 18230325
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 12806913
+  |line 191, col 45 to line 191, col 70 of module ZilliqaProtocol: 9115164
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 228, col 31 to line 228, col 42 of module ZilliqaProtocol: 12806916
+  |line 191, col 74 to line 191, col 78 of module ZilliqaProtocol: 9115164
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 228, col 45 to line 228, col 50 of module ZilliqaProtocol: 12806918
+  line 191, col 35 to line 191, col 41 of module ZilliqaProtocol: 3038388
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 229, col 16 to line 229, col 52 of module ZilliqaProtocol: 10600409
+  line 234, col 8 to line 234, col 35 of module ZilliqaProtocol: 3038388
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 10600412
+  |line 234, col 22 to line 234, col 35 of module ZilliqaProtocol: 3038434
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 68902681
+  line 235, col 8 to line 235, col 37 of module ZilliqaProtocol: 3038434
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 10600417
+  line 113, col 8 to line 113, col 21 of module ZilliqaProtocol: 3038442
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 229, col 31 to line 229, col 47 of module ZilliqaProtocol: 10600419
+  line 114, col 8 to line 114, col 27 of module ZilliqaProtocol: 3036030
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 229, col 50 to line 229, col 51 of module ZilliqaProtocol: 10600461
+  line 64, col 35 to line 64, col 45 of module ZilliqaProtocol: 4070426
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 230, col 16 to line 230, col 34 of module ZilliqaProtocol: 10600465
+  line 64, col 59 to line 64, col 69 of module ZilliqaProtocol: 24422553
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 181, col 24 to line 181, col 78 of module ZilliqaProtocol: 10600468
+  line 52, col 25 to line 52, col 34 of module TCommit: 3052635
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 181, col 45 to line 181, col 78 of module ZilliqaProtocol: 31801413
+  line 44, col 18 to line 46, col 66 of module TCommit: 3052635
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 181, col 35 to line 181, col 41 of module ZilliqaProtocol: 10600473
+  line 47, col 21 to line 47, col 58 of module TCommit: 3052823
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 232, col 16 to line 232, col 43 of module ZilliqaProtocol: 0
+  line 31, col 31 to line 31, col 54 of module TCommit: 9158472
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 232, col 30 to line 232, col 43 of module ZilliqaProtocol: 10600536
+  line 31, col 26 to line 31, col 27 of module TCommit: 3052824
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 233, col 16 to line 233, col 45 of module ZilliqaProtocol: 0
+  line 49, col 21 to line 49, col 64 of module TCommit: 3052635
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 233, col 31 to line 233, col 45 of module ZilliqaProtocol: 10600546
+  line 52, col 46 to line 52, col 46 of module TCommit: 3052825
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 235, col 24 to line 235, col 35 of module ZilliqaProtocol: 10600550
+  line 52, col 20 to line 52, col 21 of module TCommit: 1017609
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 192, col 12 to line 193, col 82 of module ZilliqaProtocol: 0
+  line 240, col 16 to line 241, col 79 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 192, col 27 to line 193, col 82 of module ZilliqaProtocol: 10600656
+  |line 240, col 35 to line 241, col 79 of module ZilliqaProtocol: 6105655
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 194, col 12 to line 194, col 49 of module ZilliqaProtocol: 0
+  line 242, col 16 to line 242, col 33 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 236, col 39 to line 236, col 63 of module ZilliqaProtocol: 10600665
+  |line 242, col 25 to line 242, col 33 of module ZilliqaProtocol: 6105660
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 10600667
+  line 243, col 16 to line 246, col 105 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 21201442
+  |line 244, col 17 to line 246, col 105 of module ZilliqaProtocol: 6105663
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 21201464
+  ||line 244, col 18 to line 244, col 28 of module ZilliqaProtocol: 6105665
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 85132254
+  ||line 244, col 37 to line 244, col 104 of module ZilliqaProtocol: 6105273
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 21201555
+  ||line 245, col 37 to line 245, col 104 of module ZilliqaProtocol: 6105273
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 21201719
+  ||line 246, col 45 to line 246, col 104 of module ZilliqaProtocol: 6105668
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 21201751
+  |||line 246, col 60 to line 246, col 83 of module ZilliqaProtocol: 6105671
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 10600842
+  ||||line 246, col 60 to line 246, col 73 of module ZilliqaProtocol: 6105672
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 236, col 57 to line 236, col 62 of module ZilliqaProtocol: 10600844
+  |||||line 246, col 60 to line 246, col 70 of module ZilliqaProtocol: 6105672
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 236, col 66 to line 236, col 67 of module ZilliqaProtocol: 10600845
+  |||line 246, col 86 to line 246, col 103 of module ZilliqaProtocol: 6105274
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 237, col 24 to line 237, col 46 of module ZilliqaProtocol: 0
+  line 248, col 16 to line 248, col 51 of module ZilliqaProtocol: 3038381
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 238, col 24 to line 238, col 36 of module ZilliqaProtocol: 10600852
+  line 249, col 16 to line 249, col 32 of module ZilliqaProtocol: 3038381
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 239, col 24 to line 239, col 55 of module ZilliqaProtocol: 0
+  line 252, col 16 to line 252, col 27 of module ZilliqaProtocol: 12182576
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 240, col 24 to line 240, col 62 of module ZilliqaProtocol: 0
+  |line 252, col 16 to line 252, col 20 of module ZilliqaProtocol: 9144129
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 241, col 16 to line 241, col 57 of module ZilliqaProtocol: 0
+  |line 252, col 24 to line 252, col 27 of module ZilliqaProtocol: 9144130
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 243, col 16 to line 243, col 45 of module ZilliqaProtocol: 2206560
+  line 202, col 12 to line 203, col 82 of module ZilliqaProtocol: 3038449
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 244, col 16 to line 244, col 94 of module ZilliqaProtocol: 2206509
+  |line 202, col 27 to line 203, col 82 of module ZilliqaProtocol: 9144134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 202, col 28 to line 202, col 38 of module ZilliqaProtocol: 9144135
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 202, col 47 to line 203, col 81 of module ZilliqaProtocol: 9143657
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 203, col 29 to line 203, col 81 of module ZilliqaProtocol: 9144139
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 203, col 30 to line 203, col 53 of module ZilliqaProtocol: 9143657
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 203, col 70 to line 203, col 80 of module ZilliqaProtocol: 9144142
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 197, col 24 to line 197, col 64 of module ZilliqaProtocol: 9144143
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 197, col 24 to line 197, col 50 of module ZilliqaProtocol: 9144145
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 197, col 24 to line 197, col 40 of module ZilliqaProtocol: 9144148
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 197, col 24 to line 197, col 34 of module ZilliqaProtocol: 9144148
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 197, col 36 to line 197, col 39 of module ZilliqaProtocol: 9144150
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 197, col 55 to line 197, col 64 of module ZilliqaProtocol: 9144152
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 204, col 12 to line 204, col 49 of module ZilliqaProtocol: 3038452
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 204, col 28 to line 204, col 49 of module ZilliqaProtocol: 3038453
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 253, col 31 to line 253, col 55 of module ZilliqaProtocol: 9144157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 9144158
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 18540960
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 18540966
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 60449146
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 18541232
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 18541238
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 18541242
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 9144365
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 253, col 49 to line 253, col 54 of module ZilliqaProtocol: 9144365
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 253, col 58 to line 253, col 59 of module ZilliqaProtocol: 9144367
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 254, col 16 to line 254, col 38 of module ZilliqaProtocol: 3038382
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 255, col 16 to line 255, col 28 of module ZilliqaProtocol: 9144372
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 256, col 16 to line 256, col 47 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 257, col 16 to line 257, col 54 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 258, col 8 to line 258, col 49 of module ZilliqaProtocol: 3038382
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TimeOut line 257, col 1 to line 257, col 7 of module ZilliqaProtocol>: 9480:9480
+<TimeOut line 300, col 1 to line 300, col 7 of module ZilliqaProtocol>: 2510:2510
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 250, col 8 to line 250, col 22 of module ZilliqaProtocol: 68773
+  line 108, col 8 to line 108, col 22 of module ZilliqaProtocol: 41123
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 250, col 8 to line 250, col 18 of module ZilliqaProtocol: 59293
+  |line 108, col 8 to line 108, col 18 of module ZilliqaProtocol: 38613
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 251, col 8 to line 251, col 28 of module ZilliqaProtocol: 68772
+  line 109, col 8 to line 109, col 28 of module ZilliqaProtocol: 41122
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 251, col 8 to line 251, col 24 of module ZilliqaProtocol: 59292
+  |line 109, col 8 to line 109, col 24 of module ZilliqaProtocol: 38612
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 264, col 8 to line 264, col 25 of module ZilliqaProtocol: 9480
+  line 307, col 8 to line 307, col 25 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 266, col 8 to line 269, col 121 of module ZilliqaProtocol: 9480
+  line 309, col 8 to line 312, col 121 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 270, col 8 to line 270, col 37 of module ZilliqaProtocol: 9480
+  line 313, col 8 to line 313, col 37 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 271, col 8 to line 271, col 103 of module ZilliqaProtocol: 9480
+  line 314, col 8 to line 314, col 103 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 272, col 8 to line 272, col 24 of module ZilliqaProtocol: 9480
+  line 315, col 8 to line 315, col 24 of module ZilliqaProtocol: 2510
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
 <TypeOK line 68, col 1 to line 68, col 6 of module ZilliqaProtocol>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 71582
+  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 71582
+  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 71582
+  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 71582
+  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 71582
+  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 71582
+  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 71582
+  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 71582
+  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 214746
+  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 145293
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 71582
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2774:0 @!@!@
-<TransactionFinality line 298, col 1 to line 298, col 19 of module ZilliqaProtocol>
-@!@!@ENDMSG 2774 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 299, col 5 to line 303, col 48 of module ZilliqaProtocol: 71582
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 300, col 9 to line 303, col 48 of module ZilliqaProtocol: 214746
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 299, col 15 to line 299, col 21 of module ZilliqaProtocol: 71582
+  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<DSCommitRecord line 351, col 1 to line 351, col 14 of module ZilliqaProtocol>
+<TransactionFinality line 341, col 1 to line 341, col 19 of module ZilliqaProtocol>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 351, col 19 to line 351, col 50 of module ZilliqaProtocol: 71582
+  line 342, col 5 to line 347, col 51 of module ZilliqaProtocol: 48431
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 343, col 9 to line 347, col 51 of module ZilliqaProtocol: 145293
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 344, col 25 to line 344, col 56 of module ZilliqaProtocol: 268533
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 347, col 13 to line 347, col 51 of module ZilliqaProtocol: 268533
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 347, col 16 to line 347, col 51 of module ZilliqaProtocol: 268533
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 268533
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 939000
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 268533
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 31 to line 347, col 42 of module ZilliqaProtocol: 268533
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 45 to line 347, col 50 of module ZilliqaProtocol: 268533
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 343, col 22 to line 343, col 54 of module ZilliqaProtocol: 145293
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 342, col 15 to line 342, col 21 of module ZilliqaProtocol: 48431
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<DSCommitRecord line 390, col 1 to line 390, col 14 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 390, col 19 to line 390, col 50 of module ZilliqaProtocol: 48431
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2202:0 @!@!@
 End of statistics.
 @!@!@ENDMSG 2202 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(16) at 2021-05-21 01:25:17: 4,279,480 states generated (996,291 s/min), 91,016 distinct states found (19,438 ds/min), 12,287 states left on queue.
+Progress(15) at 2021-05-21 21:37:38: 4,979,990 states generated (1,244,115 s/min), 63,464 distinct states found (15,033 ds/min), 12,484 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(18) at 2021-05-21 01:26:17: 5,266,081 states generated (986,601 s/min), 113,840 distinct states found (22,824 ds/min), 16,384 states left on queue.
+Progress(16) at 2021-05-21 21:38:38: 6,323,887 states generated (1,343,897 s/min), 74,942 distinct states found (11,478 ds/min), 11,606 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2021-05-21 01:26:17
+The coverage statistics at 2021-05-21 21:38:38
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2773:0 @!@!@
 <Init line 78, col 1 to line 78, col 4 of module ZilliqaProtocol>: 1:1
@@ -977,456 +1073,1428 @@ The coverage statistics at 2021-05-21 01:26:17
   line 79, col 5 to line 88, col 28 of module ZilliqaProtocol: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<NewNodeJoins line 134, col 1 to line 134, col 21 of module ZilliqaProtocol>: 10239:1754222
+<NewNodeJoins line 144, col 1 to line 144, col 21 of module ZilliqaProtocol>: 12:1140048
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 139, col 8 to line 139, col 44 of module ZilliqaProtocol: 1754226
+  line 149, col 8 to line 149, col 44 of module ZilliqaProtocol: 1140048
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 1754226
+  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 1140048
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 15966827
+  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 9593258
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 15966827
+  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 1140048
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 15966827
+  |line 149, col 23 to line 149, col 34 of module ZilliqaProtocol: 1140048
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 1754226
+  |line 149, col 37 to line 149, col 43 of module ZilliqaProtocol: 1140048
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 139, col 23 to line 139, col 34 of module ZilliqaProtocol: 1754226
+  line 151, col 12 to line 151, col 28 of module ZilliqaProtocol: 806346
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 139, col 37 to line 139, col 43 of module ZilliqaProtocol: 1754226
+  line 152, col 12 to line 152, col 28 of module ZilliqaProtocol: 806346
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 141, col 12 to line 141, col 28 of module ZilliqaProtocol: 1463377
+  line 154, col 12 to line 154, col 41 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 142, col 12 to line 142, col 28 of module ZilliqaProtocol: 1463377
+  line 155, col 12 to line 155, col 54 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 144, col 12 to line 144, col 41 of module ZilliqaProtocol: 290849
+  line 160, col 13 to line 161, col 94 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 145, col 12 to line 145, col 54 of module ZilliqaProtocol: 290849
+  |line 161, col 15 to line 161, col 94 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 150, col 13 to line 151, col 94 of module ZilliqaProtocol: 290849
+  ||line 161, col 16 to line 161, col 29 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 151, col 15 to line 151, col 94 of module ZilliqaProtocol: 290849
+  ||line 161, col 41 to line 161, col 48 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 16 to line 151, col 29 of module ZilliqaProtocol: 290849
+  |||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 41 to line 151, col 48 of module ZilliqaProtocol: 290849
+  ||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 1299368
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 147, col 27 to line 147, col 46 of module ZilliqaProtocol: 290849
+  ||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 118, col 22 to line 118, col 28 of module ZilliqaProtocol: 1074817
+  ||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 1299368
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 119, col 20 to line 119, col 49 of module ZilliqaProtocol: 290849
+  ||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 117, col 16 to line 117, col 63 of module ZilliqaProtocol: 1074817
+  ||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 1299368
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 120, col 23 to line 120, col 46 of module ZilliqaProtocol: 290849
+  |||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 1299368
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 122, col 8 to line 124, col 29 of module ZilliqaProtocol: 1074817
+  ||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 1299368
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 122, col 11 to line 122, col 69 of module ZilliqaProtocol: 1074817
+  ||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 12 to line 122, col 31 of module ZilliqaProtocol: 1074817
+  |||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 38 to line 122, col 68 of module ZilliqaProtocol: 290849
+  |||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 965666
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 123, col 13 to line 123, col 20 of module ZilliqaProtocol: 290849
+  ||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 124, col 13 to line 124, col 29 of module ZilliqaProtocol: 783968
+  ||line 161, col 53 to line 161, col 93 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 147, col 39 to line 147, col 45 of module ZilliqaProtocol: 290849
+  |||line 161, col 60 to line 161, col 83 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 151, col 53 to line 151, col 93 of module ZilliqaProtocol: 290849
+  ||||line 161, col 60 to line 161, col 73 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 151, col 60 to line 151, col 83 of module ZilliqaProtocol: 290849
+  ||||line 161, col 75 to line 161, col 82 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 151, col 60 to line 151, col 73 of module ZilliqaProtocol: 290849
+  |||||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 151, col 75 to line 151, col 82 of module ZilliqaProtocol: 290849
+  ||||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 1298917
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 147, col 27 to line 147, col 46 of module ZilliqaProtocol: 290849
+  ||||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 118, col 22 to line 118, col 28 of module ZilliqaProtocol: 1074817
+  ||||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 1298917
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 119, col 20 to line 119, col 49 of module ZilliqaProtocol: 290849
+  ||||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 117, col 16 to line 117, col 63 of module ZilliqaProtocol: 1074817
+  ||||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 1298917
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 120, col 23 to line 120, col 46 of module ZilliqaProtocol: 290849
+  |||||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 1298917
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 122, col 8 to line 124, col 29 of module ZilliqaProtocol: 1074817
+  ||||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 1298917
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 122, col 11 to line 122, col 69 of module ZilliqaProtocol: 1074817
+  ||||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||||line 122, col 12 to line 122, col 31 of module ZilliqaProtocol: 1074817
+  |||||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||||line 122, col 38 to line 122, col 68 of module ZilliqaProtocol: 290849
+  |||||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 965215
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 123, col 13 to line 123, col 20 of module ZilliqaProtocol: 290849
+  ||||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||||line 124, col 13 to line 124, col 29 of module ZilliqaProtocol: 783968
+  |||line 161, col 86 to line 161, col 92 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 147, col 39 to line 147, col 45 of module ZilliqaProtocol: 290849
+  line 162, col 16 to line 162, col 101 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 151, col 86 to line 151, col 92 of module ZilliqaProtocol: 290849
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 152, col 16 to line 152, col 101 of module ZilliqaProtocol: 290849
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 153, col 16 to line 153, col 32 of module ZilliqaProtocol: 290849
+  line 163, col 16 to line 163, col 32 of module ZilliqaProtocol: 333702
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<NewTxRcvd line 204, col 1 to line 204, col 21 of module ZilliqaProtocol>: 81832:3490128
+<NewTxRcvd line 223, col 1 to line 223, col 21 of module ZilliqaProtocol>: 64320:5173289
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 213, col 13 to line 213, col 28 of module ZilliqaProtocol: 21050615
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 179345349
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 215, col 16 to line 215, col 24 of module ZilliqaProtocol: 1
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 174172104
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 216, col 16 to line 217, col 79 of module ZilliqaProtocol: 0
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 174172129
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 218, col 16 to line 218, col 33 of module ZilliqaProtocol: 0
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 13680655
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 220, col 16 to line 223, col 105 of module ZilliqaProtocol: 0
+  line 231, col 23 to line 231, col 34 of module ZilliqaProtocol: 13680655
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 225, col 16 to line 225, col 64 of module ZilliqaProtocol: 3490128
+  line 231, col 37 to line 231, col 42 of module ZilliqaProtocol: 13680657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 226, col 16 to line 226, col 32 of module ZilliqaProtocol: 3490128
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 67253553
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 228, col 13 to line 230, col 34 of module ZilliqaProtocol: 21050629
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 62080205
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 228, col 16 to line 228, col 51 of module ZilliqaProtocol: 21050630
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 62080212
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 21050634
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 9676237
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 191600974
+  line 232, col 23 to line 232, col 39 of module ZilliqaProtocol: 9676237
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 21050641
+  line 232, col 42 to line 232, col 43 of module ZilliqaProtocol: 9675902
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 228, col 31 to line 228, col 42 of module ZilliqaProtocol: 21050644
+  line 191, col 45 to line 191, col 78 of module ZilliqaProtocol: 31040121
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 228, col 45 to line 228, col 50 of module ZilliqaProtocol: 21050643
+  |line 191, col 45 to line 191, col 70 of module ZilliqaProtocol: 15520062
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 229, col 16 to line 229, col 52 of module ZilliqaProtocol: 17560500
+  |line 191, col 74 to line 191, col 78 of module ZilliqaProtocol: 15520062
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 17560500
+  line 191, col 35 to line 191, col 41 of module ZilliqaProtocol: 5173355
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 114143250
+  line 234, col 8 to line 234, col 35 of module ZilliqaProtocol: 5173355
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 17560500
+  line 235, col 8 to line 235, col 37 of module ZilliqaProtocol: 5173355
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 229, col 31 to line 229, col 47 of module ZilliqaProtocol: 17560500
+  line 113, col 8 to line 113, col 21 of module ZilliqaProtocol: 5173356
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 229, col 31 to line 229, col 32 of module ZilliqaProtocol: 17560500
+  line 114, col 8 to line 114, col 27 of module ZilliqaProtocol: 5170944
 @!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2775:0 @!@!@
-  ||||line 14, col 5 to line 16, col 75 of module ZilliqaModel: 17560500:131703750
-@!@!@ENDMSG 2775 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 6 to line 14, col 20 of module ZilliqaModel: 17560500
+  line 64, col 35 to line 64, col 45 of module ZilliqaProtocol: 6711409
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 23 to line 14, col 37 of module ZilliqaModel: 17560500
+  line 64, col 59 to line 64, col 69 of module ZilliqaProtocol: 40268448
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||||line 14, col 32 to line 14, col 35 of module ZilliqaModel: 17560500
+  line 52, col 25 to line 52, col 34 of module TCommit: 5033556
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 40 to line 14, col 54 of module ZilliqaModel: 17560500
+  line 44, col 18 to line 46, col 66 of module TCommit: 5033556
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 14, col 57 to line 14, col 71 of module ZilliqaModel: 17560500
+  line 47, col 21 to line 47, col 58 of module TCommit: 5033556
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 6 to line 15, col 20 of module ZilliqaModel: 17560500
+  line 31, col 31 to line 31, col 54 of module TCommit: 15100668
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 23 to line 15, col 37 of module ZilliqaModel: 17560500
+  line 31, col 26 to line 31, col 27 of module TCommit: 5033556
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 40 to line 15, col 54 of module ZilliqaModel: 17560500
+  line 49, col 21 to line 49, col 64 of module TCommit: 5033556
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 15, col 57 to line 15, col 71 of module ZilliqaModel: 17560500
+  line 52, col 46 to line 52, col 46 of module TCommit: 5033556
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 6 to line 16, col 20 of module ZilliqaModel: 17560500
+  line 52, col 20 to line 52, col 21 of module TCommit: 1677852
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 23 to line 16, col 38 of module ZilliqaModel: 17560500
+  line 240, col 16 to line 241, col 79 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 41 to line 16, col 56 of module ZilliqaModel: 17560500
+  |line 240, col 35 to line 241, col 79 of module ZilliqaProtocol: 10067112
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 16, col 59 to line 16, col 74 of module ZilliqaModel: 17560501
+  line 242, col 16 to line 242, col 33 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 229, col 36 to line 229, col 47 of module ZilliqaProtocol: 17560502
+  |line 242, col 25 to line 242, col 33 of module ZilliqaProtocol: 10067112
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 229, col 50 to line 229, col 51 of module ZilliqaProtocol: 17560504
+  line 243, col 16 to line 246, col 105 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 230, col 16 to line 230, col 34 of module ZilliqaProtocol: 17560505
+  |line 244, col 17 to line 246, col 105 of module ZilliqaProtocol: 10067112
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 181, col 24 to line 181, col 78 of module ZilliqaProtocol: 17560507
+  line 248, col 16 to line 248, col 51 of module ZilliqaProtocol: 5173294
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 181, col 45 to line 181, col 78 of module ZilliqaProtocol: 52681527
+  line 249, col 16 to line 249, col 32 of module ZilliqaProtocol: 5173294
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 181, col 35 to line 181, col 41 of module ZilliqaProtocol: 17560510
+  line 252, col 16 to line 252, col 27 of module ZilliqaProtocol: 20413847
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 232, col 16 to line 232, col 43 of module ZilliqaProtocol: 0
+  |line 252, col 16 to line 252, col 20 of module ZilliqaProtocol: 15240480
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 232, col 30 to line 232, col 43 of module ZilliqaProtocol: 17560512
+  |line 252, col 24 to line 252, col 27 of module ZilliqaProtocol: 15240481
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 233, col 16 to line 233, col 45 of module ZilliqaProtocol: 0
+  line 202, col 12 to line 203, col 82 of module ZilliqaProtocol: 5173370
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 233, col 31 to line 233, col 45 of module ZilliqaProtocol: 17560512
+  |line 202, col 27 to line 203, col 82 of module ZilliqaProtocol: 15240482
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 235, col 24 to line 235, col 35 of module ZilliqaProtocol: 17560512
+  ||line 202, col 28 to line 202, col 38 of module ZilliqaProtocol: 15240483
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 192, col 12 to line 193, col 82 of module ZilliqaProtocol: 0
+  ||line 202, col 47 to line 203, col 81 of module ZilliqaProtocol: 15240453
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 192, col 27 to line 193, col 82 of module ZilliqaProtocol: 17560512
+  ||line 203, col 29 to line 203, col 81 of module ZilliqaProtocol: 15240484
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 192, col 28 to line 192, col 38 of module ZilliqaProtocol: 17560513
+  |||line 203, col 30 to line 203, col 53 of module ZilliqaProtocol: 15240453
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 192, col 47 to line 193, col 81 of module ZilliqaProtocol: 17560484
+  |||line 203, col 56 to line 203, col 80 of module ZilliqaProtocol: 15240454
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 193, col 29 to line 193, col 81 of module ZilliqaProtocol: 17560516
+  line 204, col 12 to line 204, col 49 of module ZilliqaProtocol: 5173374
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 193, col 30 to line 193, col 53 of module ZilliqaProtocol: 17560484
+  line 253, col 31 to line 253, col 55 of module ZilliqaProtocol: 15240487
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 193, col 56 to line 193, col 80 of module ZilliqaProtocol: 17560484
+  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 15240487
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 194, col 12 to line 194, col 49 of module ZilliqaProtocol: 0
+  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 30847219
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 236, col 39 to line 236, col 63 of module ZilliqaProtocol: 17560522
+  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 30847220
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 17560524
+  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 109381383
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 35121408
+  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 30847220
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 35121408
+  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 30847221
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 142048032
+  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 30847222
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 100, col 43 to line 100, col 46 of module ZilliqaProtocol: 142048032
+  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 15240491
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||||line 100, col 50 to line 100, col 50 of module ZilliqaProtocol: 142048032
+  |line 253, col 49 to line 253, col 54 of module ZilliqaProtocol: 15240492
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 35121408
+  line 253, col 58 to line 253, col 59 of module ZilliqaProtocol: 15240492
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 35121408
+  line 254, col 16 to line 254, col 38 of module ZilliqaProtocol: 5173342
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 35121408
+  line 255, col 16 to line 255, col 28 of module ZilliqaProtocol: 15240494
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 17560524
+  line 256, col 16 to line 256, col 47 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 236, col 57 to line 236, col 62 of module ZilliqaProtocol: 17560524
+  line 257, col 16 to line 257, col 54 of module ZilliqaProtocol: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 236, col 66 to line 236, col 67 of module ZilliqaProtocol: 17560525
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 237, col 24 to line 237, col 46 of module ZilliqaProtocol: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 238, col 24 to line 238, col 36 of module ZilliqaProtocol: 17560531
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 239, col 24 to line 239, col 55 of module ZilliqaProtocol: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 240, col 24 to line 240, col 62 of module ZilliqaProtocol: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 241, col 16 to line 241, col 57 of module ZilliqaProtocol: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 243, col 16 to line 243, col 45 of module ZilliqaProtocol: 3490188
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 244, col 16 to line 244, col 94 of module ZilliqaProtocol: 3490128
+  line 258, col 8 to line 258, col 49 of module ZilliqaProtocol: 5173342
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TimeOut line 257, col 1 to line 257, col 7 of module ZilliqaProtocol>: 21768:21768
+<TimeOut line 300, col 1 to line 300, col 7 of module ZilliqaProtocol>: 10609:10609
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 250, col 8 to line 250, col 22 of module ZilliqaProtocol: 119225
+  line 108, col 8 to line 108, col 22 of module ZilliqaProtocol: 73946
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 250, col 8 to line 250, col 18 of module ZilliqaProtocol: 97457
+  |line 108, col 8 to line 108, col 18 of module ZilliqaProtocol: 63337
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 251, col 8 to line 251, col 28 of module ZilliqaProtocol: 119224
+  line 109, col 8 to line 109, col 28 of module ZilliqaProtocol: 73945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 251, col 8 to line 251, col 24 of module ZilliqaProtocol: 97456
+  |line 109, col 8 to line 109, col 24 of module ZilliqaProtocol: 63336
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 264, col 8 to line 264, col 25 of module ZilliqaProtocol: 21768
+  line 307, col 8 to line 307, col 25 of module ZilliqaProtocol: 10609
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 266, col 8 to line 269, col 121 of module ZilliqaProtocol: 21768
+  line 309, col 8 to line 312, col 121 of module ZilliqaProtocol: 10609
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 270, col 8 to line 270, col 37 of module ZilliqaProtocol: 21768
+  line 313, col 8 to line 313, col 37 of module ZilliqaProtocol: 10609
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 271, col 8 to line 271, col 103 of module ZilliqaProtocol: 21768
+  line 314, col 8 to line 314, col 103 of module ZilliqaProtocol: 10609
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 272, col 8 to line 272, col 24 of module ZilliqaProtocol: 21768
+  line 315, col 8 to line 315, col 24 of module ZilliqaProtocol: 10609
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
 <TypeOK line 68, col 1 to line 68, col 6 of module ZilliqaProtocol>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 113841
+  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 113841
+  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 113841
+  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 113841
+  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 113841
+  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 113841
+  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 113841
+  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 113841
+  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 341523
+  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 224835
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 113841
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2774:0 @!@!@
-<TransactionFinality line 298, col 1 to line 298, col 19 of module ZilliqaProtocol>
-@!@!@ENDMSG 2774 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 299, col 5 to line 303, col 48 of module ZilliqaProtocol: 113841
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 300, col 9 to line 303, col 48 of module ZilliqaProtocol: 341523
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 299, col 15 to line 299, col 21 of module ZilliqaProtocol: 113841
+  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<DSCommitRecord line 351, col 1 to line 351, col 14 of module ZilliqaProtocol>
+<TransactionFinality line 341, col 1 to line 341, col 19 of module ZilliqaProtocol>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 351, col 19 to line 351, col 50 of module ZilliqaProtocol: 113841
+  line 342, col 5 to line 347, col 51 of module ZilliqaProtocol: 74945
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 343, col 9 to line 347, col 51 of module ZilliqaProtocol: 224835
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 344, col 25 to line 344, col 56 of module ZilliqaProtocol: 435701
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 347, col 13 to line 347, col 51 of module ZilliqaProtocol: 435701
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 347, col 16 to line 347, col 51 of module ZilliqaProtocol: 435701
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 435701
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 1583118
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 435701
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 31 to line 347, col 42 of module ZilliqaProtocol: 435701
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 45 to line 347, col 50 of module ZilliqaProtocol: 435701
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 343, col 22 to line 343, col 54 of module ZilliqaProtocol: 224835
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 342, col 15 to line 342, col 21 of module ZilliqaProtocol: 74945
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<DSCommitRecord line 390, col 1 to line 390, col 14 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 390, col 19 to line 390, col 50 of module ZilliqaProtocol: 74945
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2777:0 @!@!@
 End of statistics (please note that for performance reasons large models
 are best checked with coverage and cost statistics disabled).
 @!@!@ENDMSG 2777 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(19) at 2021-05-21 01:27:17: 6,212,413 states generated (946,332 s/min), 132,247 distinct states found (18,407 ds/min), 16,383 states left on queue.
+Progress(17) at 2021-05-21 21:39:38: 7,482,850 states generated (1,158,963 s/min), 83,913 distinct states found (8,971 ds/min), 9,748 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(18) at 2021-05-21 21:40:38: 8,641,609 states generated (1,158,759 s/min), 91,924 distinct states found (8,011 ds/min), 6,921 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2021-05-21 21:40:38
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 78, col 1 to line 78, col 4 of module ZilliqaProtocol>: 1:1
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 79, col 5 to line 88, col 28 of module ZilliqaProtocol: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<NewNodeJoins line 144, col 1 to line 144, col 21 of module ZilliqaProtocol>: 12:1530054
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 149, col 8 to line 149, col 44 of module ZilliqaProtocol: 1530072
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 1530072
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 13206897
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 1530072
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 149, col 23 to line 149, col 34 of module ZilliqaProtocol: 1530072
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 149, col 37 to line 149, col 43 of module ZilliqaProtocol: 1530072
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 151, col 12 to line 151, col 28 of module ZilliqaProtocol: 1153170
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 152, col 12 to line 152, col 28 of module ZilliqaProtocol: 1153170
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 154, col 12 to line 154, col 41 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 155, col 12 to line 155, col 54 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 160, col 13 to line 161, col 94 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 161, col 15 to line 161, col 94 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 161, col 16 to line 161, col 29 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 161, col 41 to line 161, col 48 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 1477017
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 1477017
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 1477017
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 1477017
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 1477017
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 1100132
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 161, col 53 to line 161, col 93 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 161, col 60 to line 161, col 83 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 161, col 60 to line 161, col 73 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 161, col 75 to line 161, col 82 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 1477243
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 1477243
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 1477243
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 1477243
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 1477243
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 1100358
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 161, col 86 to line 161, col 92 of module ZilliqaProtocol: 376885
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 162, col 16 to line 162, col 101 of module ZilliqaProtocol: 376884
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 163, col 16 to line 163, col 32 of module ZilliqaProtocol: 376884
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<NewTxRcvd line 223, col 1 to line 223, col 21 of module ZilliqaProtocol>: 81303:7101080
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 256190248
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 249089205
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 249089242
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 18360915
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 231, col 23 to line 231, col 34 of module ZilliqaProtocol: 18360916
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 231, col 37 to line 231, col 42 of module ZilliqaProtocol: 18360918
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 92314194
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 85213113
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 85213117
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 13838303
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 232, col 23 to line 232, col 39 of module ZilliqaProtocol: 13838303
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 232, col 23 to line 232, col 24 of module ZilliqaProtocol: 13838305
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  ||line 14, col 5 to line 16, col 75 of module ZilliqaModel: 13838307:99051446
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 14, col 6 to line 14, col 20 of module ZilliqaModel: 13838311
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 14, col 23 to line 14, col 37 of module ZilliqaModel: 13838311
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 14, col 40 to line 14, col 54 of module ZilliqaModel: 13838312
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 14, col 57 to line 14, col 71 of module ZilliqaModel: 13838313
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 15, col 6 to line 15, col 20 of module ZilliqaModel: 13838314
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 15, col 23 to line 15, col 37 of module ZilliqaModel: 13838314
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 15, col 40 to line 15, col 54 of module ZilliqaModel: 13838315
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 15, col 57 to line 15, col 71 of module ZilliqaModel: 13838316
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 16, col 6 to line 16, col 20 of module ZilliqaModel: 13838317
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 16, col 23 to line 16, col 38 of module ZilliqaModel: 13838319
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 16, col 41 to line 16, col 56 of module ZilliqaModel: 13838319
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 16, col 59 to line 16, col 74 of module ZilliqaModel: 13838320
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 232, col 28 to line 232, col 39 of module ZilliqaProtocol: 13838322
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 232, col 42 to line 232, col 43 of module ZilliqaProtocol: 13837231
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 191, col 45 to line 191, col 78 of module ZilliqaProtocol: 42606603
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 191, col 45 to line 191, col 70 of module ZilliqaProtocol: 21303303
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 191, col 74 to line 191, col 78 of module ZilliqaProtocol: 21303303
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 191, col 35 to line 191, col 41 of module ZilliqaProtocol: 7101101
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 234, col 8 to line 234, col 35 of module ZilliqaProtocol: 7101100
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 234, col 22 to line 234, col 35 of module ZilliqaProtocol: 7101101
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 235, col 8 to line 235, col 37 of module ZilliqaProtocol: 7101100
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 235, col 23 to line 235, col 37 of module ZilliqaProtocol: 7101101
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 113, col 8 to line 113, col 21 of module ZilliqaProtocol: 7101102
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 114, col 8 to line 114, col 27 of module ZilliqaProtocol: 7098690
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 64, col 35 to line 64, col 45 of module ZilliqaProtocol: 9662401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 64, col 59 to line 64, col 69 of module ZilliqaProtocol: 57974400
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 52, col 25 to line 52, col 34 of module TCommit: 7246800
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 44, col 18 to line 46, col 66 of module TCommit: 7246800
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 47, col 21 to line 47, col 58 of module TCommit: 7246800
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 31, col 31 to line 31, col 54 of module TCommit: 21740400
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 31, col 26 to line 31, col 27 of module TCommit: 7246800
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 49, col 21 to line 49, col 64 of module TCommit: 7246800
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 52, col 46 to line 52, col 46 of module TCommit: 7246800
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 52, col 20 to line 52, col 21 of module TCommit: 2415600
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 240, col 16 to line 241, col 79 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 240, col 35 to line 241, col 79 of module ZilliqaProtocol: 14493600
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 242, col 16 to line 242, col 33 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 242, col 25 to line 242, col 33 of module ZilliqaProtocol: 14493600
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 243, col 16 to line 246, col 105 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 244, col 17 to line 246, col 105 of module ZilliqaProtocol: 14493600
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 248, col 16 to line 248, col 51 of module ZilliqaProtocol: 7101085
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 249, col 16 to line 249, col 32 of module ZilliqaProtocol: 7101085
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 252, col 16 to line 252, col 27 of module ZilliqaProtocol: 28695819
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 252, col 16 to line 252, col 20 of module ZilliqaProtocol: 21594710
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 252, col 24 to line 252, col 27 of module ZilliqaProtocol: 21594710
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 202, col 12 to line 203, col 82 of module ZilliqaProtocol: 7101110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 202, col 27 to line 203, col 82 of module ZilliqaProtocol: 21594711
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 204, col 12 to line 204, col 49 of module ZilliqaProtocol: 7101111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 253, col 31 to line 253, col 55 of module ZilliqaProtocol: 21594712
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 21594712
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 43660233
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 43660234
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 165139554
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 100, col 43 to line 100, col 46 of module ZilliqaProtocol: 165139554
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 100, col 43 to line 100, col 43 of module ZilliqaProtocol: 165139554
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 100, col 45 to line 100, col 45 of module ZilliqaProtocol: 165139569
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 100, col 50 to line 100, col 50 of module ZilliqaProtocol: 165139569
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 43660239
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 43660240
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 43660242
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 21594717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 253, col 49 to line 253, col 54 of module ZilliqaProtocol: 21594717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 253, col 58 to line 253, col 59 of module ZilliqaProtocol: 21594717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 254, col 16 to line 254, col 38 of module ZilliqaProtocol: 7101086
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 255, col 16 to line 255, col 28 of module ZilliqaProtocol: 21594718
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 256, col 16 to line 256, col 47 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 257, col 16 to line 257, col 54 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 258, col 8 to line 258, col 49 of module ZilliqaProtocol: 7101087
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<TimeOut line 300, col 1 to line 300, col 7 of module ZilliqaProtocol>: 10609:10609
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 108, col 8 to line 108, col 22 of module ZilliqaProtocol: 95613
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 108, col 8 to line 108, col 18 of module ZilliqaProtocol: 85004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 109, col 8 to line 109, col 28 of module ZilliqaProtocol: 95612
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 109, col 8 to line 109, col 24 of module ZilliqaProtocol: 85003
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 307, col 8 to line 307, col 25 of module ZilliqaProtocol: 10609
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 309, col 8 to line 312, col 121 of module ZilliqaProtocol: 10609
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 313, col 8 to line 313, col 37 of module ZilliqaProtocol: 10609
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 314, col 8 to line 314, col 103 of module ZilliqaProtocol: 10609
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 315, col 8 to line 315, col 24 of module ZilliqaProtocol: 10609
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<TypeOK line 68, col 1 to line 68, col 6 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 275775
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<TransactionFinality line 341, col 1 to line 341, col 19 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 342, col 5 to line 347, col 51 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 343, col 9 to line 347, col 51 of module ZilliqaProtocol: 275775
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 344, col 25 to line 344, col 56 of module ZilliqaProtocol: 553925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 347, col 13 to line 347, col 51 of module ZilliqaProtocol: 553925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 347, col 16 to line 347, col 51 of module ZilliqaProtocol: 553925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 553925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 2068347
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 553925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 31 to line 347, col 42 of module ZilliqaProtocol: 553925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 45 to line 347, col 50 of module ZilliqaProtocol: 553925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 343, col 22 to line 343, col 54 of module ZilliqaProtocol: 275775
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 342, col 15 to line 342, col 21 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<DSCommitRecord line 390, col 1 to line 390, col 14 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 390, col 19 to line 390, col 50 of module ZilliqaProtocol: 91925
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2777:0 @!@!@
+End of statistics (please note that for performance reasons large models
+are best checked with coverage and cost statistics disabled).
+@!@!@ENDMSG 2777 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(21) at 2021-05-21 21:41:38: 9,878,505 states generated (1,236,896 s/min), 100,783 distinct states found (8,859 ds/min), 2,689 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2193:0 @!@!@
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 5.6E-8
+  based on the actual fingerprints:  val = 5.1E-11
+@!@!@ENDMSG 2193 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2021-05-21 21:41:54
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 78, col 1 to line 78, col 4 of module ZilliqaProtocol>: 1:1
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 79, col 5 to line 88, col 28 of module ZilliqaProtocol: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<NewNodeJoins line 144, col 1 to line 144, col 21 of module ZilliqaProtocol>: 12:1843218
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 149, col 8 to line 149, col 44 of module ZilliqaProtocol: 1843218
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 1843218
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 16154186
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 1843218
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 149, col 23 to line 149, col 34 of module ZilliqaProtocol: 1843218
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 149, col 37 to line 149, col 43 of module ZilliqaProtocol: 1843218
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 151, col 12 to line 151, col 28 of module ZilliqaProtocol: 1449061
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 152, col 12 to line 152, col 28 of module ZilliqaProtocol: 1449061
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 154, col 12 to line 154, col 41 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 155, col 12 to line 155, col 54 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 160, col 13 to line 161, col 94 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 161, col 15 to line 161, col 94 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 161, col 16 to line 161, col 29 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 161, col 41 to line 161, col 48 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 1549627
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 1549627
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 1549627
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 1549627
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 1549627
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 1155470
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 161, col 53 to line 161, col 93 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 161, col 60 to line 161, col 83 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 161, col 60 to line 161, col 73 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 161, col 75 to line 161, col 82 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 157, col 27 to line 157, col 46 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 128, col 22 to line 128, col 28 of module ZilliqaProtocol: 1550028
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 129, col 20 to line 129, col 49 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 127, col 16 to line 127, col 63 of module ZilliqaProtocol: 1550028
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 130, col 23 to line 130, col 46 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 132, col 8 to line 134, col 29 of module ZilliqaProtocol: 1550028
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 132, col 11 to line 132, col 69 of module ZilliqaProtocol: 1550028
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||||line 132, col 12 to line 132, col 31 of module ZilliqaProtocol: 1550028
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||||line 132, col 38 to line 132, col 68 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 133, col 13 to line 133, col 20 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||||line 134, col 13 to line 134, col 29 of module ZilliqaProtocol: 1155871
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||||line 157, col 39 to line 157, col 45 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 161, col 86 to line 161, col 92 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 162, col 16 to line 162, col 101 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 163, col 16 to line 163, col 32 of module ZilliqaProtocol: 394157
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<NewTxRcvd line 223, col 1 to line 223, col 21 of module ZilliqaProtocol>: 89099:8362644
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 321359820
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 312997176
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 312997176
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 22118616
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 231, col 23 to line 231, col 34 of module ZilliqaProtocol: 22118616
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 231, col 37 to line 231, col 42 of module ZilliqaProtocol: 22118616
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 108714372
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 45 to line 97, col 45 of module ZilliqaProtocol: 100351728
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 97, col 49 to line 97, col 52 of module ZilliqaProtocol: 100351728
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 17388732
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 232, col 23 to line 232, col 39 of module ZilliqaProtocol: 17388732
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 232, col 42 to line 232, col 43 of module ZilliqaProtocol: 17382540
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 191, col 45 to line 191, col 78 of module ZilliqaProtocol: 50175864
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 191, col 45 to line 191, col 70 of module ZilliqaProtocol: 25087932
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 191, col 74 to line 191, col 78 of module ZilliqaProtocol: 25087932
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 191, col 35 to line 191, col 41 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 234, col 8 to line 234, col 35 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 235, col 8 to line 235, col 37 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 113, col 8 to line 113, col 21 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 114, col 8 to line 114, col 27 of module ZilliqaProtocol: 8360232
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 64, col 35 to line 64, col 45 of module ZilliqaProtocol: 11093281
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 64, col 59 to line 64, col 69 of module ZilliqaProtocol: 66559680
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 52, col 25 to line 52, col 34 of module TCommit: 8319960
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 44, col 18 to line 46, col 66 of module TCommit: 8319960
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 47, col 21 to line 47, col 58 of module TCommit: 8319960
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 31, col 31 to line 31, col 54 of module TCommit: 24959880
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 31, col 26 to line 31, col 27 of module TCommit: 8319960
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 49, col 21 to line 49, col 64 of module TCommit: 8319960
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 52, col 46 to line 52, col 46 of module TCommit: 8319960
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 52, col 20 to line 52, col 21 of module TCommit: 2773320
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 240, col 16 to line 241, col 79 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 240, col 35 to line 241, col 79 of module ZilliqaProtocol: 16639920
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 242, col 16 to line 242, col 33 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 242, col 25 to line 242, col 33 of module ZilliqaProtocol: 16639920
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 243, col 16 to line 246, col 105 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 244, col 17 to line 246, col 105 of module ZilliqaProtocol: 16639920
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 248, col 16 to line 248, col 51 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 249, col 16 to line 249, col 32 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 252, col 16 to line 252, col 27 of module ZilliqaProtocol: 33365208
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 252, col 16 to line 252, col 20 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 252, col 24 to line 252, col 27 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 202, col 12 to line 203, col 82 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 202, col 27 to line 203, col 82 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 204, col 12 to line 204, col 49 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 253, col 31 to line 253, col 55 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 104, col 5 to line 104, col 67 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 104, col 30 to line 104, col 67 of module ZilliqaProtocol: 50503068
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 100, col 22 to line 100, col 50 of module ZilliqaProtocol: 50503068
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 100, col 43 to line 100, col 50 of module ZilliqaProtocol: 196058400
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 100, col 31 to line 100, col 39 of module ZilliqaProtocol: 50503068
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 104, col 42 to line 104, col 60 of module ZilliqaProtocol: 50503068
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 104, col 63 to line 104, col 66 of module ZilliqaProtocol: 50503068
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 104, col 20 to line 104, col 26 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 253, col 49 to line 253, col 54 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 253, col 58 to line 253, col 59 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 254, col 16 to line 254, col 38 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 255, col 16 to line 255, col 28 of module ZilliqaProtocol: 25002564
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 256, col 16 to line 256, col 47 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 257, col 16 to line 257, col 54 of module ZilliqaProtocol: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 258, col 8 to line 258, col 49 of module ZilliqaProtocol: 8362644
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<TimeOut line 300, col 1 to line 300, col 7 of module ZilliqaProtocol>: 13289:13289
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 108, col 8 to line 108, col 22 of module ZilliqaProtocol: 115690
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 108, col 8 to line 108, col 18 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 109, col 8 to line 109, col 28 of module ZilliqaProtocol: 115689
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 109, col 8 to line 109, col 24 of module ZilliqaProtocol: 102400
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 307, col 8 to line 307, col 25 of module ZilliqaProtocol: 13289
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 309, col 8 to line 312, col 121 of module ZilliqaProtocol: 13289
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 313, col 8 to line 313, col 37 of module ZilliqaProtocol: 13289
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 314, col 8 to line 314, col 103 of module ZilliqaProtocol: 13289
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 315, col 8 to line 315, col 24 of module ZilliqaProtocol: 13289
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<TypeOK line 68, col 1 to line 68, col 6 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 69, col 5 to line 76, col 97 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 69, col 8 to line 69, col 40 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 70, col 8 to line 70, col 38 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 71, col 8 to line 71, col 40 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 72, col 8 to line 72, col 40 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 73, col 8 to line 73, col 36 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 74, col 8 to line 74, col 36 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 75, col 8 to line 76, col 97 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 76, col 8 to line 76, col 97 of module ZilliqaProtocol: 307203
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 75, col 18 to line 75, col 24 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<TransactionFinality line 341, col 1 to line 341, col 19 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 342, col 5 to line 347, col 51 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 343, col 9 to line 347, col 51 of module ZilliqaProtocol: 307203
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 344, col 25 to line 344, col 56 of module ZilliqaProtocol: 638976
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 347, col 13 to line 347, col 51 of module ZilliqaProtocol: 638976
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 347, col 16 to line 347, col 51 of module ZilliqaProtocol: 638976
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 97, col 30 to line 97, col 52 of module ZilliqaProtocol: 638976
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 45 to line 97, col 52 of module ZilliqaProtocol: 2463744
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||||line 97, col 39 to line 97, col 41 of module ZilliqaProtocol: 638976
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 31 to line 347, col 42 of module ZilliqaProtocol: 638976
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 347, col 45 to line 347, col 50 of module ZilliqaProtocol: 638976
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 343, col 22 to line 343, col 54 of module ZilliqaProtocol: 307203
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 342, col 15 to line 342, col 21 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<DSCommitRecord line 390, col 1 to line 390, col 14 of module ZilliqaProtocol>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 390, col 19 to line 390, col 50 of module ZilliqaProtocol: 102401
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2777:0 @!@!@
+End of statistics (please note that for performance reasons large models
+are best checked with coverage and cost statistics disabled).
+@!@!@ENDMSG 2777 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(26) at 2021-05-21 21:41:54: 10,219,152 states generated (1,225,212 s/min), 102,401 distinct states found (12,277 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+10219152 states generated, 102401 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 26.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 14 and the 95th percentile is 4).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 500451ms at (2021-05-21 21:41:54)
+@!@!@ENDMSG 2186 @!@!@
