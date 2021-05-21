@@ -245,7 +245,7 @@ NewTxRcvd(tx, sender) ==
                                     ! [1] = [epochTerm |-> microBlocks[1].epochTerm, txsAgreed |-> <<>>],
                                     ! [2] = [epochTerm |-> microBlocks[2].epochTerm, txsAgreed |-> <<>>]]
         \/  \* do not commit to history
-            /\ UNCHANGED <<historyOfBlocks, epoch>>
+            /\ UNCHANGED <<historyOfBlocks, epoch, microBlocks>>
             /\ UNCHANGED cnsvars
     /\
         \* simplified verification + process procedure
@@ -254,42 +254,8 @@ NewTxRcvd(tx, sender) ==
             /\ UNCHANGED <<faultyTxs>>
         \/  /\ tx[2] = FALSE
             /\ faultyTxs' = faultyTxs \cup {tx}
-            /\ UNCHANGED <<microBlocks, txsProcessed>>
+            /\ UNCHANGED <<txsProcessed>>
     /\ UNCHANGED <<nodesZilliqa, shardStructure>>                    
-
-PrevNewTxRcvd(tx, sender) ==
-    /\ IF \* can DS nodes collate and commit final blcok to history
-            EnoughTxsRcvd(3) \* per 3 txs received
-       THEN
-            /\ TC!TCNext \* DS nodes run consensus before committing final blcok
-            /\ historyOfBlocks' = historyOfBlocks \cup 
-                    {[epochTerm |-> epoch, txsCollated |-> CollateAlternative]} \* [prev] CollateMicroBlocksTxs(<<>>, 0)
-            /\ epoch' = epoch + 1
-            \* /\ \A id \in shardID : EmptyMicroBlock(id) \* changed to below just to be sure
-            /\ microBlocks' =
-                [microBlocks EXCEPT ! [0] = [epochTerm |-> microBlocks[0].epochTerm, txsAgreed |-> <<>>],
-                                    ! [1] = [epochTerm |-> microBlocks[1].epochTerm, txsAgreed |-> <<>>],
-                                    ! [2] = [epochTerm |-> microBlocks[2].epochTerm, txsAgreed |-> <<>>]]
-       ELSE 
-            /\ UNCHANGED <<historyOfBlocks, epoch, microBlocks>>
-            /\ UNCHANGED cnsvars
-    /\ IF \* is it coming from the participating node and has the tx not been processed yet
-            /\ IsElementInSet(nodesZilliqa, sender)
-            /\ IsElementInSet(Tx \ txsProcessed, tx)
-            /\ AtTheRightEpochTerm
-       THEN
-            /\ numTxsRcvd' = numTxsRcvd + 1   \* increment numTxsRcvd by 1
-            /\ timeCounter' = timeCounter + 1 \* increment timeCounter by 1
-            /\  \* simplified verification procedure
-                \/  /\ tx[2] = TRUE \* update microBlock of a relevant shard
-                    /\ ShardProcessTx(FindShardIDofNode(sender), tx)
-                    /\ UNCHANGED <<faultyTxs>>
-                \/  /\ tx[2] = FALSE
-                    /\ faultyTxs' = faultyTxs \cup {tx}
-                    /\ UNCHANGED <<microBlocks, txsProcessed>>
-            /\ UNCHANGED <<nodesZilliqa, shardStructure>>
-       ELSE
-            /\ UNCHANGED <<nodesZilliqa, shardStructure, numTxsRcvd, txsProcessed, faultyTxs, timeCounter>>
 
 -----------------------------------------------------------------------------
 
@@ -303,7 +269,7 @@ TimeOut ==
   (*         set the global glock timeCounter to 0                         *)
   (*         keep microBlocks, to be committed to history in next epoch    *)
   (*************************************************************************)
-    /\ EnoughTimePassed(5) \* (timeCounter % 5 = 0) /\ (timeCounter # 0) \* enabling condition
+    /\ EnoughTimePassed(4) \* (timeCounter % 5 = 0) /\ (timeCounter # 0) \* enabling condition
     /\ epoch' = epoch + 1
     /\ \* synchronize epoch across the protocol by updating epochTerm for every shard ID
        microBlocks' =
@@ -336,6 +302,36 @@ Next ==
 (*       Safety properties      *)
 (* **************************** *)
 
+\* if a node is participating in Zilliqa, then one of the shards contains the node
+\* if a node is not participating in Zilliqa, then none of the shards contains it
+NodeConsistent ==
+    \A n \in Node : 
+        \/
+            /\ n \in Participating
+            /\ \E id \in shardID : SeqContains(shardStructure[id], n)
+        \/
+            /\ n \in nonParticipating
+            /\ \A id \in shardID : ~SeqContains(shardStructure[id], n)
+
+\* no same node can join multiple nodes
+NoNodeJoinsTwoShards ==
+    \A n1, n2 \in Participating : 
+        \E id1, id2 \in shardID :
+            ~ /\ n1 = n2
+              /\ id1 # id2
+              /\ SeqContains(shardStructure[id1], n1)
+              /\ SeqContains(shardStructure[id2], n2) 
+
+\* no same transaction should be processed by two different shards
+\* i.e., once rcv tx, it will be processed by a single shard
+TxConsistent ==
+    \A tx1, tx2 \in txsProcessed : 
+        \E id1, id2 \in shardID : 
+            ~ /\ tx1 = tx2
+              /\ id1 # id2
+              /\ SeqContains(microBlocks[id1].txsAgreed, tx1) 
+              /\ SeqContains(microBlocks[id2].txsAgreed, tx2) 
+
 \* once in microBlocks, it will be committed to the historyOfBlocks
 \* this property implies that the protocol prevents double spending attacks
 TransactionFinality ==
@@ -343,35 +339,46 @@ TransactionFinality ==
         \A index \in 1..Len(microBlocks[id].txsAgreed) :
           LET txElem == microBlocks[id].txsAgreed[index]
           IN
-            \* \E block \in historyOfBlocks : SeqContains(block.txsCollated, txElem)
             /\ IsElementInSet(txsProcessed, txElem)
-
-
-\* once rcv tx, it should not be processed by two different shards
-\* that is once rcv tx, it will be processed by a single shard
+            \* comment :
+            \*  since it takes to commit to history (\E gap), we cannot write the following
+            \*      \E block \in historyOfBlocks : SeqContains(block.txsCollated, txElem)
 
 \* txs that are eventually committed to the history are correct
-\* note : currently once txs are commmitted, 
-\*        there is no way to verify their original senders
 CorrectTxsCommitted ==
     \A blck \in historyOfBlocks : 
        \A ind \in 1..Len(blck.txsCollated) :
             blck.txsCollated[ind][2] = TRUE
+    \* comment :
+    \*  currently once txs are commmitted, there is no way to verify their original senders
+    \*  so we do not say "all txs sent by honest nodes are correct"
+    \*  also note that there can be correct txs sent by malicious nodes,
+    \*  assuming that byzantine node may or may not send faulty txs
     
-    (* note : above version makes more sense than below
-     * \A tx \in txsProcessed : (tx[2] = TRUE) /\ (tx \notin faultyTxs) *)
+    (* note : above version is an alternative from the original version below
+     *          \A tx \in txsProcessed : (tx[2] = TRUE) /\ (tx \notin faultyTxs) *)
 
 -----------------------------------------------------------------------------
 
 \* view to verify actions NewNodeJoins and TimeOut
 \* myview == <<epoch, shardStructure, microBlocks, historyOfBlocks, timeCounter, txsProcessed, faultyTxs>>
-        (* excluded variables as they are specific to this design : numTxsRcvd, nodesZilliqa *)
 
-\* view to verify action NewTxRcvd
+\* view to verify action NewTxRcvd which leads to committing to history
 myview == <<epoch, numTxsRcvd, txsProcessed, faultyTxs, numTxsRcvd, timeCounter>>
 
-\* notes
-\* numTxsRcvd : needed to commit to history (and in the future, to update DS committee)
+\* historyOfBlocks, 
+
+(* Notes on variables
+ 1 epoch : included, to verify TimeOut
+ 2 nodesZilliqa : excluded, required when performing NewNodeJoins
+ 3 shardStructure : excluded, required when performing NewNodeJoins
+ 4 microBlocks : excluded, being a bottleneck
+ 5 historyOfBlocks : included, to verify blocks being committed and check relevant invariants
+ 6 timeCounter : included, meaningful when performing TimeOut
+ 7 numTxsRcvd : included, needed to commit to history (in the future work, to update DS committee)
+ 8 txsProcessed : included, needed to verify safety property TransactionFinality
+ 9 faultyTxs : included, meaningful when performing NewTxRcvd
+ *)
 
 -----------------------------------------------------------------------------
 
