@@ -134,7 +134,7 @@ RECURSIVE ProofOfWork(_)
 ProofOfWork(node) ==
     LET 
     \* hash based on node and gen shardNum (based on randomness)
-       hash == CustomRandomElement(1..10) + CustomRandomElement(1..node[2])
+       hash == RandomElement(1..10) + RandomElement(1..node[2])
        difficulty == node[2] \* if too difficult, running TLC becomes slower
        shardnum == node[2] % Cardinality(shardID)
        prevMembers == shardStructure[shardnum]
@@ -217,18 +217,18 @@ ShardProcessTx(snum, tx) ==
 (*     Action : new tx rcv'd    *)
 (* **************************** *)
 
-CommitToHistory ==
-    /\ EnoughTxsRcvd(3)
-    /\ TC!TCNext \* DS nodes run consensus before committing final blcok
-    /\ historyOfBlocks' = historyOfBlocks \cup 
-            {[epochTerm |-> epoch, txsCollated |-> CollateAlternative]} \* [prev] CollateMicroBlocksTxs(<<>>, 0)
-    /\ epoch' = epoch + 1
-    \* /\ \A id \in shardID : EmptyMicroBlock(id) \* changed to below just to be sure
-    /\ microBlocks' =
-        [microBlocks EXCEPT ! [0] = [epochTerm |-> microBlocks[0].epochTerm, txsAgreed |-> <<>>],
-                            ! [1] = [epochTerm |-> microBlocks[1].epochTerm, txsAgreed |-> <<>>],
-                            ! [2] = [epochTerm |-> microBlocks[2].epochTerm, txsAgreed |-> <<>>]]
-    /\ UNCHANGED <<nodesZilliqa, shardStructure, numTxsRcvd, txsProcessed, faultyTxs, timeCounter>>
+\* CommitToHistory ==
+\*     /\ EnoughTxsRcvd(3)
+\*     /\ TC!TCNext \* DS nodes run consensus before committing final blcok
+\*     /\ historyOfBlocks' = historyOfBlocks \cup 
+\*             {[epochTerm |-> epoch, txsCollated |-> CollateAlternative]} \* [prev] CollateMicroBlocksTxs(<<>>, 0)
+\*     /\ epoch' = epoch + 1
+\*     \* /\ \A id \in shardID : EmptyMicroBlock(id) \* changed to below just to be sure
+\*     /\ microBlocks' =
+\*         [microBlocks EXCEPT ! [0] = [epochTerm |-> microBlocks[0].epochTerm, txsAgreed |-> <<>>],
+\*                             ! [1] = [epochTerm |-> microBlocks[1].epochTerm, txsAgreed |-> <<>>],
+\*                             ! [2] = [epochTerm |-> microBlocks[2].epochTerm, txsAgreed |-> <<>>]]
+\*     /\ UNCHANGED <<nodesZilliqa, shardStructure, numTxsRcvd, txsProcessed, faultyTxs, timeCounter>>
 
 NewTxRcvd(tx, sender) ==
   (*************************************************************************)
@@ -314,7 +314,7 @@ Next ==
 
 \* if a node is participating in Zilliqa, then one of the shards contains the node
 \* if a node is not participating in Zilliqa, then none of the shards contains it
-NodeConsistent ==
+NodeConsistent2 ==
     \A n \in Node : 
         \/
             /\ n \in Participating
@@ -324,7 +324,7 @@ NodeConsistent ==
             /\ \A id \in shardID : ~SeqContains(shardStructure[id], n)
 
 \* no same node can join multiple nodes
-NoNodeJoinsTwoShards ==
+NodeConsistent ==
     \A n1, n2 \in Participating : 
         \E id1, id2 \in shardID :
             ~ /\ n1 = n2
@@ -418,9 +418,21 @@ AllNodesJoinedZilliqa == Cardinality(nodesZilliqa) # Cardinality(Node)
  *   we cannot verify a property that "nodes who are not participating
  *   should not play any role in consensus"
  * - Since it lacks specification of possible misbehavior of byzantine nodes,
- *   we cannot verify how presence of byzantine nodes can lead to committing faulty txs
+ *   we cannot verify how presence of byzantine nodes can lead to committing faulty txs.
+ *   Instead, we can specify how with some (e.g., 50%) probability, the malicious nodes
+ *   can send faulty transactions. This is b/c in the current impl, there is no link btw nodes and txs that can be sent by the nodes.
+ * - Once the behavior of faulty node (and linkage btw node and txs are specified, we can add
+ *   assumption about less than 1/4 (or 1/3) being malicious and how this affects the correctness of model.
+ *   However, we need to consider the fact that TLC does not take into account that there's significantly less probability 
+ *   (i.e., 1 in a million) that there will be at most 1/3 malicious nodes given 600 nodes in each shard.
  * - For some reason, TLC needs to explore so many paths to finally let microblocks to be committed to history
  *   So this part can be re-worked (possibly further simplified) on to make it more tractable.
+ * - Note that there is no separate phase for PoW during which new nodes can join.
+ *   Rather, new nodes are assumed to be able to join at any point in time.
+ *   Hence, we cannot say that the sizes of shards stay fixed during epoch.
+ *   If we were to make use of dynamic instantiation of consensus module (currently TCommit module) per shard,
+ *   we would have to implement a separate phase for PoW to perform NewNodeJoins, so we can assume that during the rest of epoch, 
+ *   the shard size stays fixed and will be provided as a constant for the respective INSTANCE of consensus module.
  *)
 
 \* additional comment (To remove later)
